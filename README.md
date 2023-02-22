@@ -17,7 +17,7 @@
 ## Контактная информация
 
 - Телефон: +79293256604
-- Email: ml\_engineer@icloud.com
+- Email: 
 - Telegram: @no\_danger
 
 ## Цель поиска работы
