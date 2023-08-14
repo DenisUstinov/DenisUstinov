@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{$title_settings}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta name="description" content="{$description_settings}">
+		<meta name="keywords" content="{$keywords_settings}">
+		<link rel="stylesheet" href="{$HOST}/templates/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{$HOST}/templates/css/globalnews.skin.css">
+		<link rel="stylesheet" href="{$HOST}/templates/css/snap.css">
+		<!-- RSS & Pingback -->
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="rss/">
+		<link rel="shortcut icon" href="{$HOST}/favicon.png">
+		<link rel="apple-touch-icon" href="{$HOST}/favicon.png">
+		<!--[if lt IE 9]>
+		   <script src="{$HOST}/templates/js/html5.js"></script>
+		   <script>window.html5 || document.write('<script src="{$HOST}/templates/js/html5shiv.js"><\/script>')</script>
+		<![endif]-->
+		<script src="{$HOST}/templates/js/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="{$HOST}/templates/js/jquery-1.10.2.min.js"><\/script>')</script>
+	</head>
+	<body>
+		<div class="snap-drawers overthrow">
+			<div class="snap-drawer snap-drawer-left">
+				<nav class="responsive-menu">
+					<h3>Меню</h3>
+					<a href="{$HOSTS}/admin/index.php">Главная</a>
+					<a href="{$HOSTS}/admin/index.php?table=settings&id=1">Настройки</a>
+					<a href="{$HOSTS}/admin/index.php?table=categories">Категории</a>
+					<a href="{$HOSTS}/admin/index.php?table=subcategories">Подкатегории</a>
+					<a href="{$HOSTS}/admin/index.php?table=articles">Статьи</a>
+					<a href="{$HOSTS}/admin/index.php?action=logout">Выйти</a>
+				</nav>
+			</div>
+		</div>
+		<div id="main-container" class="snap-content overthrow">
+			<div class="container">
+				<header id="header">
+					<div class="row">
+						<div id="main-header">
+							<div class="col-lg-12 col-md-12">
+								<!--<h3><a>Административная Панель</a></h3>-->
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div id="main-navigation">
+								<nav id="menu" class="visible-lg visible-md">
+									<a href="{$HOSTS}/admin/index.php">Главная</a>
+									<a href="{$HOSTS}/admin/index.php?table=settings&id=1">Настройки</a>
+									<a href="{$HOSTS}/admin/index.php?table=categories">Категории</a>
+									<a href="{$HOSTS}/admin/index.php?table=subcategories">Подкатегории</a>
+									<a href="{$HOSTS}/admin/index.php?table=articles">Статьи</a>
+									<a href="{$HOSTS}/admin/index.php?action=logout">Выйти</a>
+								</nav>
+								<button id="responsive-menu-button" type="button" class="responsive-menu-button btn btn-default visible-xs visible-sm">
+									<span class="glyphicon glyphicon-th-list"></span> MENU
+								</button>
+							</div>
+						</div>
+					</div>
+				</header>
+				<main id="main">
+					<div class="row">
+						<div class="col-lg-8 col-md-8">
+							<div id="content" class="article-page">
+								{$filter_categories}
+								{$filter_subcategories}
+								{$content}
+								{$error_reporting}
+								{$paginator}
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<aside id="sidebar">
+								<section id="ad" class="block visible-lg visible-md">
+									<a href="http://sourcefabric.org/" target="_blank"><img class="img-responsive" src="http://globalnews-dev.lab.sourcefabric.org/themes/publication_2/theme_2/_img/sourcefabric-ad.png" alt="ad"></a>
+								</section>
+							</aside>
+						</div>
+					</div>
+				</main>
+				<footer id="footer">
+					<div class="row">
+						<div id="about-us-block" class="col-lg-12 col-md-12">
+							<a href="">{$footer_settings} &copy; {$date_settings} </a>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script src="{$HOST}/templates/js/bootstrap.min.js"></script>
+		<script src="{$HOST}/templates/js/matchmedia.js"></script>
+		<script src="{$HOST}/templates/js/picturefill.js"></script>
+		<script src="{$HOST}/templates/js/jquery.timeago.js"></script>
+		<script src="{$HOST}/templates/js/snap.min.js"></script>
+		<script src="{$HOST}/templates/js/overthrow.min.js"></script>
+		<script src="{$HOST}/templates/js/global-news.js"></script>
+	</body>
+</html>

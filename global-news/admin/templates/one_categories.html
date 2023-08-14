@@ -1,0 +1,44 @@
+<h2>{$title_content}</h2>
+<form name="form" method="POST" action="{$url_action}" ENCTYPE="multipart/form-data" id="comment-form" role="form">
+	<input type="hidden" name="id" value="{$id}"><br><br>
+
+	<div class="form-group">
+		<label class="control-label" for="title_categories">Название категории</label>
+		<div class="controls">
+			<input class="form-control" type="text" name="title_categories" value="{$title_categories}">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label" for="description_categories">Краткое описание категории</label>
+		<div class="controls">
+			<textarea name="description_categories" cols="40" rows="2" tabindex="4" class="form-control" >{$description_categories}</textarea>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label" for="keywords_categories">Ключевые слова категории</label>
+		<div class="controls">
+			<textarea name="keywords_categories" cols="40" rows="2" tabindex="4" class="form-control" >{$keywords_categories}</textarea>
+		</div>
+	</div>
+
+	{$image_form}
+	<div class="form-group">
+		<label class="control-label" for="image_categories">Картинка категории</label>
+		<div class="controls">
+			<input class="form-control" type="file" name="image_categories">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label" for="sorting_categories">Номер сортировки категории</label>
+		<div class="controls">
+			<input class="form-control" type="text" name="sorting_categories" value="{$sorting_categories}">
+		</div>
+	</div>
+
+	<input type="submit" value="Сохранить" class="solid-button form-column-right"> 
+</form>
+{$form_delite_articles}
+{$form_delite_images}

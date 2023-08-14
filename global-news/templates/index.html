@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{$title_settings}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="description" content="{$description_settings}">
+	<meta name="keywords" content="{$keywords_settings}">
+	<link rel="stylesheet" href="{$HOST}/templates/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{$HOST}/templates/css/globalnews.skin.css">
+	<link rel="stylesheet" href="{$HOST}/templates/css/snap.css">
+	<!-- RSS & Pingback -->
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="">
+	<link rel="shortcut icon" href="{$HOST}/templates/img/favicon.png">
+	<link rel="apple-touch-icon" href="{$HOST}/templates/img/favicon.png">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script>window.html5 || document.write('<script src="{$HOST}/templates/js/html5shiv.js"><\/script>')</script>
+	<![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{$HOST}/templates/js/jquery-1.10.2.min.js"><\/script>')</script>
+</head>
+<body>
+	{$mobile_navigation}
+	<div id="main-container" class="snap-content overthrow">
+		<div class="container">
+			<header id="header">
+				<div class="row">
+					<div class="col-lg-12">
+						<div id="top-header" class="hidden-xs">
+							<div class="pull-left">
+								<a href="/register">Register</a>
+								<a href="/auth">Login</a>
+								<a href="/en/static/rss">RSS</a>
+							</div>
+							<div class="pull-right">
+								Monday, January 25 2016
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div id="main-header">
+						<div class="col-lg-9 col-md-9">
+							<h1><a href="/">Global <span>News<span></a></h1>
+						</div>
+						<div class="col-lg-3 col-md-3">
+							<!--<div id="social-header">
+								<a href="http://facebook.com/sourcefabric" target="_blank"><img src="_img/social-icons/facebook.png"></a>
+								<a href="http://twitter.com/sourcefabric" target="_blank"><img src="_img/social-icons/twitter.png"></a>
+								<a href="http://vimeo.com/sourcefabric" target="_blank" ><img src="_img/social-icons/vimeo.png"></a>
+								<a href="http://flickr.com/photos/sourcefabric" target="_blank"><img src="_img/social-icons/flickr.png"></a>
+							</div>
+							<form id="search-form" name="search_articles" action="/en/may2013/" method="POST" class="form-horizontal" >
+								<input type="hidden" name="tpl" value="7">
+								<input type="search" id="searchinput" class="form-control" placeholder="Search" name="f_search_keywords">
+								<button id="search-button" class="btn btn-default" name="f_search_articles" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+							</form>-->
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div id="news-ticker">
+							<span>Breaking News</span>
+							<ul>
+								<li><a href="/en/may2013/politics/64/European-Council-candidates-set-to-be-named.htm">European Council candidates set to be named</a></li>
+								<li><a href="/en/may2013/politics/82/Food-export-duties-set-to-rise.htm">Food export duties set to rise</a></li>
+								<li><a href="/en/may2013/tech/86/Online-security-risks-exposed.htm">Online security risks exposed</a></li>
+								<li><a href="/en/may2013/politics/83/Wintry-conditions-sweep-across-China.htm">Wintry conditions sweep across China</a></li>
+							</ul>
+						</div>
+						{$main_navigation}
+						{$breadcrumb}
+					</div>
+				</div>
+			</header>
+
+			<div id="main">
+				<div class="row">
+					<div class="col-lg-8 col-md-8">
+						{$content}
+						{$error_reporting}
+					</div>
+					<div class="col-lg-4 col-md-4">
+						<!-- Sidebar -->
+						<aside id="sidebar">
+							{$articles_similar}
+							<!--<section id="video-block" class="block visible-lg visible-md">
+								<h4>Video</h4>
+								<a class="img-video" href="http://globalnews-dev.lab.sourcefabric.org/en/may2013/politics/82/Food-export-duties-set-to-rise.htm">
+									<span data-picture data-alt="Skewers (photo: Source Fabrić)">
+										<span class="img-responsive" data-src="/images/cache/275x155/crop/images%7Ccms-image-000000108.jpg"></span>
+										<span class="img-responsive" data-src="/images/cache/435x245/crop/images%7Ccms-image-000000108.jpg" data-media="(min-width: 321px)"></span>
+										<span class="img-responsive" data-src="/images/cache/500x281/crop/images%7Ccms-image-000000108.jpg" data-media="(min-width: 640px)"></span>
+										<!--[if (lt IE 9) & (!IEMobile)]>
+											<img src="/images/cache/500x281/crop/images%7Ccms-image-000000108.jpg" alt="Skewers (photo: Source Fabrić)">
+										<![endif]-->
+										<!--<noscript>
+											<img class="img-responsive" src="/images/cache/275x155/crop/images%7Ccms-image-000000108.jpg" alt="Skewers (photo: Source Fabrić)">
+										</noscript>
+									</span>
+									<span class="play-icon glyphicon glyphicon-play-circle"></span>
+								</a>
+								<span>Politics: <a href="http://globalnews-dev.lab.sourcefabric.org/en/may2013/politics/82/Food-export-duties-set-to-rise.htm">Food export duties set to rise</a></span>
+							</section>
+							<section id="latest-articles-block" class="block visible-lg visible-md">
+								<h4>Latest Articles</h4>
+								<div class="link">
+									<div class="time">12:29</div><a href="http://globalnews-dev.lab.sourcefabric.org/en/may2013/dialogue/102/UEFA-Champions-league-Enlargement-yes-or-no.htm">UEFA Champions league Enlargement: yes or no?</a>
+								</div>
+							</section>
+							<section id="latest-comments-block" class="block visible-lg visible-md">
+								<h4>Latest Comments</h4>
+								<div class="comment-box">
+									<div class="link">
+										<a class="article-link" href="http://globalnews-dev.lab.sourcefabric.org/en/may2013/politics/83/Wintry-conditions-sweep-across-China.htm#comments">I'm a very grumpy reader and I'm wondering if I'll get blocked.</a>
+										<div class="comment-info">
+											<time class="timeago" datetime="2016-01-05 21:20:26">2016-01-05 21:20:26,</time>
+											by Grumpy McGrumpy (Anonymous)
+										</div>
+									</div>
+								</div>
+								<hr>
+							</section>
+							<section id="poll" class="block">
+								<div class="pollWrap">
+									<h4>Poll</h4>
+									<blockquote>What is your everyday sport of choice?</blockquote> 
+									<div class="poll-option">
+										<label for="radio1">running
+											<div class="q-score"> <small>43%</small></div> 
+										</label>
+										<div class="progress">
+										<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width:43%;"></div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section id="ad" class="block visible-lg visible-md">
+								<a href="http://sourcefabric.org/" target="_blank"><img class="img-responsive" src="http://globalnews-dev.lab.sourcefabric.org/themes/publication_2/theme_2/_img/sourcefabric-ad.png" alt="ad"></a>
+							</section>-->
+						</aside>
+						<!-- End Sidebar -->
+					</div>
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="row">
+					<div id="about-us-block" class="col-lg-5 col-md-5">
+						<h4>About Us</h4>
+						<p>{$footer_settings}</p>
+						<p><small>{$copyright_settings}</small></p>
+					</div>
+					{$footer_navigation}
+					<div id="pages-block" class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+						<h4>Страници</h4>
+						<nav>
+							<a href="http://globalnews-dev.lab.sourcefabric.org/en/static/pages/98/Credits.htm">Credits</a>
+							<a href="http://globalnews-dev.lab.sourcefabric.org/en/static/pages/98/Credits.htm">Credits</a>
+							<a href="http://globalnews-dev.lab.sourcefabric.org/en/static/pages/98/Credits.htm">Credits</a>
+							<a href="http://globalnews-dev.lab.sourcefabric.org/en/static/pages/98/Credits.htm">Credits</a>
+							<a href="http://globalnews-dev.lab.sourcefabric.org/en/static/pages/98/Credits.htm">Credits</a>
+							<a href="http://globalnews-dev.lab.sourcefabric.org/en/static/pages/98/Credits.htm">Credits</a>
+						</nav>
+					</div>
+					<div id="contact-us-block" class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+						<h4>Contact us</h4>
+						<div class="info">
+							<div class="info-label"><span class="glyphicon glyphicon-envelope"></span> Email</div>
+							{$email_settings}
+						</div>
+						<div class="info">
+							<div class="info-label"><span class="glyphicon glyphicon-map-marker"></span> Address</div>
+							{$address_settings}
+						</div>
+						<div class="info">
+							<div class="info-label"><span class="glyphicon glyphicon-phone-alt"></span> Phone</div>
+							 {$phone_settings}
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- End .container -->
+	</div>
+	<!-- End #main-container -->
+		<script src="{$HOST}/templates/js/bootstrap.min.js"></script>
+		<script src="{$HOST}/templates/js/matchmedia.js"></script>
+		<script src="{$HOST}/templates/js/picturefill.js"></script>
+		<script src="{$HOST}/templates/js/jquery.timeago.js"></script>
+		<script src="{$HOST}/templates/js/snap.min.js"></script>
+		<script src="{$HOST}/templates/js/overthrow.min.js"></script>
+		<script src="{$HOST}/templates/js/global-news.js"></script>
+	</body>
+</html>

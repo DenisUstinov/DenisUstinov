@@ -1,0 +1,5 @@
+#Order deny,allow
+#Deny from all
+#Allow from 178.248.85.147
+
+RewriteRule .*? index.php

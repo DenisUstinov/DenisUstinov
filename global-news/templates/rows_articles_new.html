@@ -1,0 +1,29 @@
+
+								<article class="article list">
+									<h5><a href="{$url_articles}">{$title_articles}</a></h5>
+									<div class="row">
+										<div class="col-lg-5 col-md-5">
+											<a href="{$url_articles}">
+												<figure>
+													<span data-picture="" data-alt="{$title_articles}">
+														<span class="img-responsive" data-src="{$HOST}/templates/img/{$image_articles}"></span>
+														<span class="img-responsive" data-src="{$HOST}/templates/img/{$image_articles}" data-media="(min-width: 321px)"></span>
+														<span class="img-responsive" data-src="{$HOST}/templates/img/{$image_articles}" data-media="(min-width: 640px)"><img alt="{$title_articles}" src="{$HOST}/templates/img/{$image_articles}"></span>
+														<!--[if (lt IE 9) & (!IEMobile)]>
+															<img src="{$HOST}/templates/img/{$image_articles}" alt="{$title_articles}">
+														<![endif]-->
+														<noscript>
+															<img class="img-responsive" src="{$HOST}/templates/img/{$image_articles}" alt="{$title_articles}">
+														</noscript>
+													</span>
+												</figure>
+											</a>
+										</div>
+										<div class="col-lg-7 col-md-7">
+											<div class="excerpt">
+												<p>{$text_articles}</p>
+											</div>
+											<a href="{$url_articles}">more</a>
+										</div>
+									</div>
+								</article>

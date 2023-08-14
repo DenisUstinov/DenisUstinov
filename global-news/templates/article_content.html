@@ -1,0 +1,96 @@
+							<a href="{$url_categories}" class="section-link">{$title_categories}</a>
+							<div class="article-info">
+								<time datetime="2013-05-02T08:17Z">{$date_articles}</time> 
+							</div>
+							<div class="clearfix"></div>
+							<h1 class="page-title">
+								{$title_articles}
+							</h1>
+							<div class="teaser">
+								<p>{$description_articles}</p>
+							</div>
+							<div id="topics-links" class="pull-left"></div>
+							<!-- <a class="comment-count" href="#comments" class="pull-right"><span class="glyphicon glyphicon-comment"></span> 1 comments</a>
+							<div class="clearfix"></div>
+							<!-- Social Buttons BEGIN
+							<div class="share-buttons">
+
+								<div id="twitter-button">
+									<a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+								</div>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+								</script>
+
+								<div id="plus-button">
+									<div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120"></div>
+									<script type="text/javascript">
+									  (function() {
+										var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+										po.src = 'https://apis.google.com/js/plusone.js';
+										var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+									  })();
+									</script>
+								</div>
+
+								<div id="facebook-button">
+									<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fglobalnews-dev.lab.sourcefabric.org/en/may2013/politics/101/News-on-general-theory-of-relativity.htm&amp;send=false&amp;layout=standard&amp;width=285&amp;show_faces=false&amp;colorscheme=light&amp;action=like&amp;height=25&amp;appId=100924830001723" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:285px; height:25px;" allowTransparency="true"></iframe>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							Social Buttons END -->
+							<figure class="image">
+								<img class="img-responsive" src="{$HOST}/templates/img/{$image_articles}" alt="{$title_articles}">
+								<figcaption>{$title_articles}</figcaption>
+							</figure>
+							<br>
+							<div class="article-content">
+								<p>{$text_articles}</p>
+								<script type="text/javascript">
+									<!--
+									var stats_getHTTPObject_101_en = function () {
+										var xhr = false;
+										if (window.XMLHttpRequest) {
+											xhr = new XMLHttpRequest();
+										} else if (window.ActiveXObject) {
+											try {
+												xhr = new ActiveXObject("Msxml2.XMLHTTP");
+											} catch(e) {
+												try {
+													xhr = new ActiveXObject("Microsoft.XMLHTTP");
+												} catch(e) {
+													xhr = false;
+												}
+											}
+										}
+										return xhr;
+									};
+
+									var stats_submit_101_en = function () {
+										if (undefined !== window.statistics_request_sent__101_en) {
+											return;
+										}
+										window.statistics_request_sent__101_en = true;
+
+										var stats_request = stats_getHTTPObject_101_en();
+										stats_request.onreadystatechange = function() {};
+
+										var read_date = new Date();
+										var read_path = "_statistics/reader/1/";
+										var request_randomizer = "" + read_date.getTime() + Math.random();
+										var stats_url = "http://globalnews-dev.lab.sourcefabric.org/" + read_path + "108/";
+										try {
+											stats_request.open("GET", stats_url + "?randomizer=" + request_randomizer, true);
+											stats_request.send(null);
+											/* not everybody has jquery installed
+											$.ajax({
+												url: stats_url,
+												data: {randomizer: request_randomizer},
+												success: function() {}
+											});
+											*/
+										} catch (e) {}
+									};
+									stats_submit_101_en();
+									-->
+									</script>
+							</div>
