@@ -1,0 +1,24 @@
+
+		<script src="{$HOST}/templates/admin/js/jquery-1.7.1.min.js"></script>
+		<script src="{$HOST}/templates/admin/js/jqeditor.js"></script>
+		<script src="{$HOST}/templates/admin/js/modals.js"></script>
+		<script src="{$HOST}/templates/admin/js/load_content.js"></script>
+		<script src="{$HOST}/templates/admin/js/translit.js"></script>
+		<script src="{$HOST}/templates/admin/js/spisok.js"></script>
+		<link rel="stylesheet" href="{$HOST}/templates/admin/css/style.css">
+		<div id="admin_panel">
+			<nav id="admin_nav">
+				<a onclick="javascript:showContent('{$HOST}/{$admin_directory}/form/settings/1');"><span class="icon-cog"></span> <span class="none_min_1120"> </span></a>
+				<!--<a onclick="javascript:showContent('{$HOST}/{$admin_directory}/form/advertisings/1');"><span class="icon-plus"></span> реклама</a>-->
+				<a onclick="javascript:showContent('{$HOST}/{$admin_directory}/form/categories/0');"><span class="icon-plus"></span> категорию</a>
+				<a onclick="javascript:showContent('{$HOST}/{$admin_directory}/form/subcategories/0');"><span class="icon-plus"></span> подкатегорию</a>
+				<a onclick="javascript:showContent('{$HOST}/{$admin_directory}/form/pages/0');"><span class="icon-plus"></span> страницу</a>
+				<a onclick="javascript:showContent('{$HOST}/{$admin_directory}/form/articles/0');"><span class="icon-plus"></span> статью</a>
+				<a onclick="javascript:showContent('{$HOST}/{$admin_directory}/form/{$table}/{$get_admin}');" style="{$editor_button_none}"><span class="icon-write"></span> Редактировать {$editor_label}</a>
+				<a href="{$HOST}/{$admin_directory}/logout" style="border:none;"><span class="icon-switch"></span> <span class="none_min_1120"> </span></a>
+			</nav>
+		</div>
+		<div id="editor_modal" style="display:none; overflow:auto;">
+			<div id="editor_content"></div>
+		</div>
+		<div style="height:50px;"> </div>

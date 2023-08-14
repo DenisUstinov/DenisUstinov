@@ -1,0 +1,53 @@
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+php_flag log_errors on
+php_flag ignore_repeated_errors off
+php_flag ignore_repeated_source off
+php_flag report_memleaks on
+php_flag track_errors on
+php_value docref_root 0
+php_value docref_ext 0
+php_value error_log /home/d/denisul4/tvoya-semya.ru/public_html/PHP_errors.log
+php_value error_reporting 2047
+php_value log_errors_max_len 0
+
+<Files PHP_errors.log>
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</Files>
+#Кодировка файлов по умолчанию
+AddDefaultCharset UTF-8
+
+
+#Настройки индексных файлов по умолчанию
+Options -Indexes
+Options +FollowSymLinks
+DirectoryIndex index.php
+
+#Настройки перенаправлений по умолчанию
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} !^tideways\.vtexte\.ru$ [NC]
+RewriteRule ^(.*)$ https://prosemyu.ru/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^tvoya-semya\.ru$ [NC]
+RewriteRule ^(.*)$ https://prosemyu.ru/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www.prosemyu\.ru$ [NC]
+RewriteRule ^(.*)$ https://prosemyu.ru/$1 [R=301,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^xn--b1agvgpd9euae\.xn--p1ai$ [NC]
+RewriteRule ^(.*)$ https://prosemyu.ru/$1 [R=301,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^xn----ctbk2ahtd0gwaf\.xn--p1ai$ [NC]
+RewriteRule ^(.*)$ https://prosemyu.ru/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule (.*) index.php?$1 [L,QSA]

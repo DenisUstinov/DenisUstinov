@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie6" lang="ru"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie7" lang="ru"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie8" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="ru"><!--<![endif]-->
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{$title_settings}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="description" content="{$description_settings}" />
+		<meta name="keywords" content="{$keywords_settings}" />
+		<meta name="author" content="{$email_settings}">
+		<!-- Тег верификации сайта в Яндекс -->
+		<meta name='yandex-verification' content='795105c758004599' />
+		<!-- .Тег верификации сайта в Яндекс -->
+		<link rel="stylesheet" href="{$HOST}/templates/{$template_settings}/css/style.css">
+		<link rel="shortcut icon" href="{$HOST}/templates/{$template_settings}/img/favicon.png">
+		<link rel="apple-touch-icon" href="{$HOST}/templates/{$template_settings}/img/favicon.png">
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script>window.html5 || document.write('<script src="{$HOST}/templates/{$template_settings}/js/html5shiv.js"><\/script>')</script>
+		<![endif]-->
+		<script src="{$HOST}/templates/{$template_settings}/js/jquery-1.7.1.min.js"></script>
+		<!-- Подгрузка контента -->
+		<script src="{$HOST}/{$ADMIN_DIRECTORY}/libraries/tinymce/tinymce.min.js"></script>
+		<script src="{$HOST}/templates/{$template_settings}/js/templates.js"></script>
+		<style>
+			body{
+				color:{$g_color};
+				color:#4d4d4d;
+			}
+			h1,h2,h3,h4{
+				color:{$l_color};
+				color:#4d4d4d;
+			}
+			a{
+				color: {$n_color};
+				color:#4d4d4d;
+			}
+			a:hover{
+				color: {$o_color};
+			}
+			.active{
+				color: {$c_color} !important;
+			}
+			time{
+				color: {$o_color};
+			}
+			#error_reporting{
+				border:1px {$o_color} solid;
+
+			}
+			#error_reporting_body{
+				color:{$o_color};
+			}
+
+			/* Шапка сайта */
+			#navigation_mobile{
+				background: {$b_color};
+			}
+			#navigation_mobile a{
+				color:{$a_color};
+			}
+			#navigation_mobile a:hover{
+				color:{$c_color};
+			}
+
+			#navigation_categories{
+				background: {$a_color};
+			}
+			#navigation_categories a{
+				color:{$b_color};
+				border-right:1px solid {$p_color};
+			}
+			#navigation_categories a:hover{
+				color: {$c_color};
+			}
+			#input_search[type=search] {
+				background: {$a_color} url({$HOST}/templates/{$template_settings}/img/search-icon.png) no-repeat 9px center;
+			}
+			#navigation_subcategories{
+				background: {$d_color};
+			}
+			#navigation_subcategories a{
+				color: {$e_color};
+			}
+			#navigation_subcategories a:hover{
+				color: {$f_color};
+			}
+			/* Шапка сайта */
+
+			/* Статьи сайта */
+			.more{
+				color:{$k_color};
+				background:{$i_color};
+				border:1px solid {$i_color};
+			}
+			.more:hover{
+				color:{$i_color};
+				background:{$k_color};
+				border:1px solid {$i_color};
+			}
+
+			.share-buttons{
+				background: {$d_color};
+			}
+			/* .Статьи сайта */
+
+			/* Сайтбар */
+			aside{
+				/*background: {$d_color};*/
+			}
+			/* .Сайтбар */
+
+			/* Футер сайта */
+			#footer_nav{
+				background: {$d_color};
+			}
+
+			#footer_body{
+				color: {$b_color};
+				background: {$a_color};
+			}
+			.social{
+				color: {$b_color};
+			}
+			#infscr-loading {
+				background: {$d_color};
+			}
+			#scroll_to_top{
+				color:{$c_color};
+			}
+			/* .Футер сайта */
+		</style>
+	</head>
+
+	<body id="body">
+
+		<!-- Панель администратора -->
+		{$admin_panel}
+		<!-- .Панель администратора -->
+
+		<!-- Шапка сайта -->
+		<header>
+			<div id="logo">
+				<a href="{$HOST}">
+					<img src="{$HOST}/templates/{$template_settings}/img/settings/medium/{$image_settings}">
+				</a>
+				<div class="none_min_979" style="float:right;width:650px;padding:25px 10px 0;">
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- ТвояСемья.рф (Лого) -->
+					<ins class="adsbygoogle"
+						 style="display:block"
+						 data-ad-client="ca-pub-2940100433717238"
+						 data-ad-slot="5074040708"
+						 data-ad-format="auto"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+			<nav id="navigation_mobile" class="block_min_979">
+				<a href="#" onclick="javascript:modal_visible('modal_menu')"><span class="icon-menu"></span> МЕНЮ</a>
+			</nav>
+			<nav id="navigation_categories" class="none_min_979">
+				{$navigation_categories}
+				<!--<form id="search" style="float:right;margin:11px;" method="POST" action="{$HOST}/index.php">
+					<input id="input_search" type="search" name="search" placeholder="Искать">
+				</form>-->
+			</nav>
+			<nav id="navigation_subcategories" class="none_min_979">
+				{$navigation_subcategories}
+			</nav>
+			<nav id="navigation_string" class="none_min_480">
+				<a href="{$HOST}">{$DOMAIN}</a>{$navigation_string}
+			</nav>
+		</header>
+		<!-- .Шапка сайта -->
+
+		<!-- Основной контент сайта -->
+		{$error_reporting}
+		{$content}
+		<!-- .Основной контент сайта -->
+
+		<!-- Навигация плагина Инфинити -->
+		<nav id="page_nav">
+			{$get}
+		</nav>
+		<!-- .Навигация плагина Инфинити -->
+
+		<!-- .Футер сайта -->
+		<footer>
+			<nav id="footer_nav" class="none_min_979">
+				{$navigation_categories}
+			</nav>
+			<div id="footer_body">
+				<img class="none_min_480" src="{$HOST}/templates/{$template_settings}/img/settings/medium/footer_logo.png" alt="Виды комнатного цветка аспарагус"><br>
+				<p class="none_min_480">{$footer_settings}</p>
+				<p class="none_min_480">{$copyright_settings}</p>
+				<noindex class="none_min_480">
+					<a href="https://www.facebook.com/groups/tvoyasemya" class="social f" target="_blank"><span class="icon-uniE000"></span></a>
+					<a href="https://twitter.com/TvoyaSemya" class="social t" target="_blank"><span class="icon-uniE001"></span></a>
+					<a href="https://plus.google.com/u/0/stream/circles/p3e27a3990a2468f2" class="social g" target="_blank"><span class="icon-uniE004"></span></a>
+					<a href="https://ok.ru/group/53002148643006" class="social ok" target="_blank"><span class="icon-uniE005"></span></a>
+					<a href="https://my.mail.ru/tvoya-semya.ru/contacts/" class="social mail" target="_blank"><span class="icon-uniE006"></span></a>
+					<a href="http://tvoyasemya.livejournal.com/" class="social lj" target="_blank"><span class="icon-uniE007"></span></a>
+					<a href="http://vk.com/tvoyasemyarf" class="social vk" target="_blank"><span class="icon-uniE002"></span></a>
+				</noindex><br>
+				<p><span class="icon-envelope"></span> {$email_settings}<br>
+				<span class="icon-home"></span> {$address_settings}<br>
+				<span class="icon-phone"></span> {$phone_settings}</p>
+				<!--LiveInternet counter-->
+					<script type="text/javascript">
+						<!--
+						document.write("<a href='//www.liveinternet.ru/click' "+
+						"target=_blank><img src='//counter.yadro.ru/hit?t14.3;r"+
+						escape(document.referrer)+((typeof(screen)=="undefined")?"":
+						";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+						screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+						";"+Math.random()+
+						"' alt='' title='LiveInternet: показано число просмотров за 24"+
+						" часа, посетителей за 24 часа и за сегодня' "+
+						"border='0' width='88' height='31'><\/a>")
+						//-->
+					</script>
+				<!--.LiveInternet-->
+			</div>
+		</footer>
+		<!-- .Футер сайта -->
+
+		<!-- Модальное окно меню -->
+		<div id="modal_menu" style="display:none; overflow:auto;">
+			<a id="modal_close" class="modal_menu" onclick="javascript:modal_hidden('modal_menu')">✕</a>
+			<div style="text-align:center;margin:50px auto 0;">{$modal_menu}</div>
+		</div>
+		<!-- .Модальное окно меню -->
+
+		<!-- Плагин Изотоп и Инфинити -->
+		<script src="{$HOST}/templates/{$template_settings}/js/isotope.min.js"></script>
+		<script src="{$HOST}/templates/{$template_settings}/js/imagesloaded.min.js"></script>
+		<script src="{$HOST}/templates/{$template_settings}/js/infinitescroll.min.js"></script>
+		<script>
+			/*$(document).ready(function(){
+				var $container = $('#content');
+				$container.imagesLoaded( function(){
+					$container.isotope({
+						itemSelector : '.article_item'
+					});
+				});
+				$container.infinitescroll({
+					navSelector  : '#page_nav',
+					nextSelector : '#page_nav a',
+					itemSelector : '.article_item',
+					loading: {
+						finishedMsg: 'Записи отсутствуют',
+						img: '{$HOST}/templates/tvoyasemya/img/loading.gif'
+					}
+				},
+
+					function( newElements ) {
+						$container.imagesLoaded( function(){
+							$container.isotope( 'appended', $( newElements ) );
+						});
+					}
+				);
+			});*/
+		</script>
+		<script>
+		$(document).ready(function() {
+			var $container = $('#content');
+			$container.imagesLoaded(function(){
+				$container.isotope({
+					itemSelector : '.article_item'
+				});
+			});
+			$('#content').infinitescroll({
+				navSelector  : '#page_nav', 
+				nextSelector : '#page_nav a', 
+				itemSelector : '.article_item',
+				loading: {
+					finishedMsg: 'Записи отсутствуют',
+					img: '{$HOST}/templates/tvoyasemya/img/loading.gif'
+				}
+			},
+			function( newElements ) {
+				var $newElems = jQuery( newElements ).hide(); 
+				$newElems.imagesLoaded(function(){
+					$newElems.fadeIn();
+					$container.isotope( 'appended', $newElems );
+				});
+			});
+		 
+		});
+		</script>
+		<!-- .Плагин Изотоп и Инфинити -->
+
+		<!-- Кнопка прокрутки вверх -->
+		<div id="scroll_to_top">
+			<span class="icon-circle-up"></span>
+		</div>
+		<script src="{$HOST}/templates/{$template_settings}/js/scroll_to_top.js"></script> 
+		<script type="text/javascript"> 
+			$(function() { 
+				$("#scroll_to_top").scrollToTop(); 
+			}); 
+		</script>
+		<!-- .Кнопка прокрутки вверх -->
+
+		<!-- Яндекс метрика -->
+		<script type="text/javascript">
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.yaCounter35353460 = new Ya.Metrika({id:35353460,
+								webvisor:true,
+								clickmap:true,
+								trackLinks:true,
+								accurateTrackBounce:true});
+					} catch(e) { }
+				});
+
+				var n = d.getElementsByTagName("script")[0],
+					s = d.createElement("script"),
+					f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+				if (w.opera == "[object Opera]") {
+					d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks");
+		</script>
+		<!-- .Яндекс метрика -->
+
+		<!-- Фиксированный блок сайтбара -->
+		<style>
+		.sticky {
+			position: fixed;
+			z-index: 101;
+		}
+		.stop {
+			position: relative;
+			z-index: 101;
+		}
+		</style>
+		<script>
+			(function(){
+			var a = document.querySelector('#scrol_fixed'), b = null, P = 20;
+			window.addEventListener('scroll', Ascroll, false);
+			document.body.addEventListener('scroll', Ascroll, false);
+			function Ascroll() {
+			  if (b == null) {
+				var Sa = getComputedStyle(a, ''), s = '';
+				for (var i = 0; i < Sa.length; i++) {
+				  if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
+					s += Sa[i] + ': ' +Sa.getPropertyValue(Sa[i]) + '; '
+				  }
+				}
+				b = document.createElement('div');
+				b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
+				a.insertBefore(b, a.firstChild);
+				var l = a.childNodes.length;
+				for (var i = 1; i < l; i++) {
+				  b.appendChild(a.childNodes[1]);
+				}
+				a.style.height = b.getBoundingClientRect().height + 'px';
+				a.style.padding = '0';
+				a.style.border = '0';
+			  }
+			  var Ra = a.getBoundingClientRect(),
+				  R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('#article1').getBoundingClientRect().bottom);  // селектор блока, при достижении нижнего края которого нужно открепить прилипающий элемент
+			  if ((Ra.top - P) <= 0) {
+				if ((Ra.top - P) <= R) {
+				  b.className = 'stop';
+				  b.style.top = - R +'px';
+				} else {
+				  b.className = 'sticky';
+				  b.style.top = P + 'px';
+				}
+			  } else {
+				b.className = '';
+				b.style.top = '';
+			  }
+			  window.addEventListener('resize', function() {
+				a.children[0].style.width = getComputedStyle(a, '').width
+			  }, false);
+			}
+			})()
+		</script>
+		<!-- .Фиксированный блок сайтбара -->
+		<noscript>
+			<div>
+				<img src="//mc.yandex.ru/watch/35353460" style="position:absolute; left:-9999px;" alt="" />
+			</div>
+		</noscript>
+		<!-- .Яндекс метрика -->
+	</body>
+</html>

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie6" lang="ru"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie7" lang="ru"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie8" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="ru"><!--<![endif]-->
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{$title_settings}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="description" content="{$description_settings}" />
+		<meta name="keywords" content="{$keywords_settings}" />
+		<meta name="author" content="Denis_Ustinow@mail.ru">
+		<!-- Тег верификации сайта в Яндекс -->
+		<meta name='yandex-verification' content='795105c758004599' />
+		<!-- .Тег верификации сайта в Яндекс -->
+		<link rel="shortcut icon" href="{$HOST}/templates/{$template_settings}/img/favicon.png">
+		<link rel="apple-touch-icon" href="{$HOST}/templates/{$template_settings}/img/favicon.png">
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script>window.html5 || document.write('<script src="{$HOST}/templates/{$template_settings}/js/html5shiv.js"><\/script>')</script>
+		<![endif]-->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+		<script>window.jQuery || document.write('<script src="{$HOST}/templates/{$template_settings}/js/jquery-1.7.1.min.js"><\x3C/script>')</script>
+		<!-- Подгрузка контента -->
+		<script src="{$HOST}/{$ADMIN_DIRECTORY}/libraries/tinymce/tinymce.min.js"></script>
+		<script>
+		function MCEInit()
+		{
+			tinymce.init({
+				selector: '#textarea',
+				language: 'ru_RU',
+				elementpath: false,
+				statusbar: false,
+				plugins: [
+					'link code'
+					//'autolink link lists charmap print preview hr anchor pagebreak spellchecker',
+					//'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+					//'save table contextmenu directionality emoticons template paste textcolor'
+				],
+
+				toolbar: 'blockquote bold italic | styleselect | bullist numlist | link code',
+				//toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
+				//toolbar: 'styleselect | forecolor | bold italic | link image',
+				//toolbar: "forecolor backcolor",
+				menubar: false,
+				style_formats: [
+					{title: 'Цвет', items: [
+						{title: 'Цвет', inline: 'span', styles: {color: '{$color_1}'}},
+						{title: 'Цвет', inline: 'span', styles: {color: '{$color_2}'}},
+						{title: 'Цвет', inline: 'span', styles: {color: '{$color_3}'}},
+						{title: 'Цвет', inline: 'span', styles: {color: '{$color_4}'}},
+						{title: 'Цвет', inline: 'span', styles: {color: '{$color_5}'}},
+						{title: 'Цвет', inline: 'span', styles: {color: '{$color_6}'}}
+					]},
+					{title: 'Заголовки', items: [
+						{title: 'Заголовок h2', block: 'h2'},
+						{title: 'Заголовок h3', block: 'h3'},
+						{title: 'Заголовок h4', block: 'h4'},
+					]}
+				]
+			});
+		}
+		</script>
+		<script>
+			function showContent(link){
+				var cont = document.getElementById('edit_content');
+				cont.innerHTML = '';
+				var http = createRequestObject();
+				if(http){
+					http.open('get', link);
+					http.onreadystatechange = function (){
+						if(http.readyState == 4){
+							cont.innerHTML = http.responseText;
+							MCEInit();
+						}
+					}
+					http.send(null);
+				}
+				else  
+				{
+					document.location = link;
+				}
+			}
+			// ajax объект
+			function createRequestObject()
+			{try { return new XMLHttpRequest()}
+				catch(e)  
+				{  try { return new ActiveXObject('Msxml2.XMLHTTP') } 
+					catch(e)  
+					{   try { return new ActiveXObject('Microsoft.XMLHTTP') } 
+						catch(e) { return null; }   } }}
+		</script>
+		<!-- /Подгрузка контента -->
+		<script type="text/javascript">
+			function translit() {
+				var str = document.getElementById("title").value;
+				var space = '-';
+				var link = '';
+				var transl = {
+					'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e', 'ж': 'zh',
+					'з': 'z', 'и': 'i', 'й': 'j', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n',
+					'о': 'o', 'п': 'p', 'р': 'r','с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h',
+					'ц': 'c', 'ч': 'ch', 'ш': 'sh', 'щ': 'sh','ъ': '',
+					'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya',
+					'?': '', '!': '', ',': '', '.': '', ':': ''
+				}
+			if (str != '')
+				str = str.toLowerCase();
+
+			for (var i = 0; i < str.length; i++){
+				if (/[а-яё?!.:,]/.test(str.charAt(i))){ // заменяем символы на русском
+					link += transl[str.charAt(i)];
+				} else if (/[a-z0-9]/.test(str.charAt(i))){ // символы на анг. оставляем как есть
+					link += str.charAt(i);
+				} else {
+					if (link.slice(-1) !== space) link += space; // прочие символы заменяем на space
+				}
+			}
+				document.getElementById("title_translit").value = link;
+			}
+		</script>
+		<style>
+			@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,100&subset=cyrillic-ext,latin);
+			/*@import url(http://fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900";);*/
+			@font-face {
+				font-family: 'icomoon';
+				src: url('/templates/{$template_settings}/fonts/icomoon.eot?42se87');
+				src: url('/templates/{$template_settings}/fonts/icomoon.eot?42se87#iefix') format('embedded-opentype'),
+					url('/templates/{$template_settings}/fonts/icomoon.ttf?42se87') format('truetype'),
+					url('/templates/{$template_settings}/fonts/icomoon.woff?42se87') format('woff'),
+					url('/templates/{$template_settings}/fonts/icomoon.svg?42se87#icomoon') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+
+			[class^="icon-"], [class*=" icon-"] {
+				/* use !important to prevent issues with browser extensions that change fonts */
+				font-family: 'icomoon' !important;
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+
+				/* Better Font Rendering =========== */
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			.icon-uniE000:before {
+				content: "\e000";
+			}
+			.icon-uniE001:before {
+				content: "\e001";
+			}
+			.icon-uniE002:before {
+				content: "\e002";
+			}
+			.icon-uniE004:before {
+				content: "\e004";
+			}
+			.icon-uniE005:before {
+				content: "\e005";
+			}
+			.icon-uniE006:before {
+				content: "\e006";
+			}
+			.icon-uniE007:before {
+				content: "\e007";
+			}
+			.icon-uniE00D:before {
+				content: "\e00d";
+			}
+			.icon-write:before {
+				content: "\e900";
+			}
+			.icon-trash:before {
+				content: "\e902";
+			}
+			.icon-envelope:before {
+				content: "\e90f";
+			}
+			.icon-cog:before {
+				content: "\e903";
+			}
+			.icon-tag:before {
+				content: "\e904";
+			}
+			.icon-bookmark:before {
+				content: "\e905";
+			}
+			.icon-cross:before {
+				content: "\e906";
+			}
+			.icon-plus:before {
+				content: "\e907";
+			}
+			.icon-home:before {
+				content: "\e90a";
+			}
+			.icon-phone:before {
+				content: "\e901";
+			}
+			.icon-switch:before {
+				content: "\e90b";
+			}
+			.icon-menu:before {
+				content: "\e908";
+			}
+			.icon-cancel-circle:before {
+				content: "\e909";
+			}
+			.icon-circle-up:before {
+				content: "\e90c";
+			}
+			.icon-circle-left:before {
+				content: "\e90d";
+			}
+			html,body,img,a{
+				margin:0;
+				padding:0;
+				border:0;
+			}
+			body{
+				width:1080px;
+				margin:0 auto;
+				font-size:1.0em;
+				font-family: 'Open Sans', sans-serif;
+				color:{$color_6}
+			}
+
+			a{
+				margin: 0;
+				padding: 0;
+				border: 0;
+				color: {$color_6};
+				text-decoration: none;
+			}
+			a:hover{
+				color: {$color_3};
+			}
+			.active{
+				color: {$color_3} !important;
+			}
+			nav,h1,h2,h3,h4{
+				text-transform: uppercase;
+			}
+			h1{
+				font-size:2.0em;
+			}
+			h2{
+				font-size:1.75em;
+			}
+			h3{
+				font-size:1.5em;
+			}
+			time{
+				color: {$color_3};
+			}
+			#error_reporting{
+				width:95%;
+				margin:10px auto 50px;
+				border:1px #dd6868 solid;
+				background:#fcd6d6;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				border-radius: 2px;
+			}
+			#error_reporting_body{
+				padding:2% 1%;
+				color:#dd6868;
+				font-size:1.5em;
+				font-weight:100;
+				text-align:center;
+			}
+
+			/* Шапка сайта */
+			header{
+				margin:0 auto 15px;
+			}
+			#hader_line{
+				padding:1px 0;
+				background: {$color_2};
+			}
+			#logo{
+				margin:30px 0 25px 15px;
+			}
+			#navigation_mobile{
+				display:none;
+				margin:0 auto;
+				text-align:center;
+				background: {$color_2};
+			}
+			#navigation_mobile a{
+				font-size:1.3em;
+				line-height: 50px;
+				color:{$color_1};
+			}
+			#navigation_mobile a:hover{
+				color:{$color_3};
+			}
+			#navigation_categories{
+				background: {$color_1};
+			}
+			#navigation_categories a{
+				line-height: 50px;
+				padding:5px 15px;
+				font-size:1.1em;
+				color:{$color_4};
+				font-weight:400;
+				border-right:1px solid {$color_5};
+			}
+			#navigation_categories a:hover{
+				color: {$color_3};
+			}
+			#navigation_subcategories{
+				padding:5px 0 5px 25px;
+				background: {$color_2};
+			}
+			#navigation_subcategories a{
+				padding-right:20px;
+				line-height: 20px;
+				font-size:0.9em;
+				font-weight:400;
+			}
+			#navigation_string{
+				padding-left:20px;
+				line-height: 50px;
+				font-size:0.9em;
+				font-weight:700;
+			}
+			/* Шапка сайта */
+
+
+
+			/* Статьи сайта */
+			section{
+				margin:15px auto;
+			}
+			.article_block{
+				margin:15px 0;
+				text-align: justify;
+			}
+			.tags{
+				text-transform: uppercase;
+			}
+			.article_item{
+				width:31.2%;
+				padding:1%;
+				display:block
+			}
+			.article_item img{
+				width:100%;
+			}
+			.article_one{
+				width:69%;
+				padding:1%;
+				float:left;
+			}
+			.article_one img{
+				width:100%;
+			}
+			.more{
+				padding:5px 15px;
+				color:{$color_2};
+				background:{$color_3};
+				border:1px solid {$color_3};
+			}
+			.more:hover{
+				background:{$color_2};
+				border:1px solid {$color_3};
+			}
+
+			.share-buttons{
+				background: {$color_2};
+				padding: 12px 10px;
+				margin: 10px 0;
+			}
+			.ya-share2__badge,.social_group{
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				-ms-filter: grayscale(100%);
+				-o-filter: grayscale(100%);
+				filter: grayscale(100%);
+				filter: url(grayscale.svg#greyscale);
+				filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+				filter: gray;
+			}
+			.ya-share2__badge:hover,.social_group:hover{
+				-webkit-filter: grayscale(0%);
+				-moz-filter: grayscale(0%);
+				-ms-filter: grayscale(0%);
+				-o-filter: grayscale(0%);
+				filter: grayscale(0%);
+			}
+
+			/* .Статьи сайта */
+
+			/* Сайтбар */
+			aside{
+				float:right;
+				width:25%;
+				padding:1%;
+				background: {$color_2};
+			}
+			aside div{
+				padding:1%;
+				margin-bottom:2em;
+			}
+			.social_group{
+				margin:0.15em 0;
+			}
+			/* .Сайтбар */
+
+			/* Футер сайта */
+			footer{
+				margin:100px auto 0;
+			}
+			#footer_nav{
+				text-align:center;
+				background: {$color_2};
+			}
+			#footer_nav a{
+				padding-right:15px;
+				line-height: 30px;
+				font-weight:400;
+				font-size: 0.9em;
+			}
+
+			#footer_body{
+				font-weight:100;
+				font-size:1.0em;
+				color: {$color_5};
+				margin:0 auto 0;
+				background: {$color_1};
+				text-align:center;
+				padding:30px 50px 20px;
+			}
+			#footer_body img{
+				max-height:90px;
+			}
+			.social{
+				font: 22px "icomoon";
+				line-height: normal;
+				margin: 0 12px;
+				color: #cccccc;
+				text-decoration: none;
+			}
+			.f:hover{color:#3c5a98;}
+			.t:hover{color:#00aced;}
+			.g:hover{color:#db4437;}
+			.ok:hover{color:#ff9f4d;}
+			.mail:hover{color:#4776a6;}
+			.lj:hover{color:#0d425a;}
+			.vk:hover{color:#48729e;}
+			.icon{
+				font: 19px "icomoon";
+				font-weight:700;
+				text-decoration: none;
+			}
+			#infscr-loading {
+				position: fixed;
+				width:23%;
+				padding: 1%;
+				bottom: 30px;
+				left: 37.5%;
+				text-align: center;
+				z-index: 100;
+				background: {$color_2};
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+			}
+			#scroll_to_top{
+				opacity: 0.5;
+				position: fixed;
+				bottom: 10px;
+				right: 5%;
+				cursor: pointer;
+				padding:3px;
+				color:{$color_3};
+				font-size:2.5em;
+				z-index: 12;
+			}
+			#scroll_to_top:hover{
+				opacity: 1.0;
+			}
+			#modal_menu{
+				top:0;
+				left:0;
+				z-index:2000;
+				width: 100%;
+				height: 100%;
+				position:fixed;
+				background:#fff;
+			}
+			#modal_close{
+				width:100%;
+				line-height:50px;
+				text-align:center;
+			}
+			/* .Футер сайта */
+
+			/* Админ панель */
+			#admin_panel{
+				box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+				z-index:3000;
+				position:fixed;
+				width:1080px;
+				text-align:center;
+				background: {$color_3};
+				{$admin_panel_style}
+			}
+			#admin_panel a{
+				cursor:pointer;
+				line-height: 50px;
+				padding:5px 15px;
+				font-size:1.0em;
+				color:{$color_2};
+				border-right:1px solid {$color_2};
+			}
+			#admin_panel a:hover{
+				color: {$color_1};
+			}
+			#modal_edit{
+				top:0;
+				left:0;
+				z-index:2000;
+				width: 100%;
+				height: 100%;
+				position:fixed;
+				background:#fff;
+			}
+			#edit_content{
+				margin:100px auto;
+				width:1050px;
+			}
+			.form-group {
+				margin-bottom: 15px;
+			}
+			.form-control{
+				width: 100%;
+				font-size:1.0em;
+				padding: 8px;
+				border: 1px solid #ccc;
+				border-left: #f00d14 1px solid;
+			}
+			.input-smal{
+				width: 50%;
+			}
+			.button{
+				padding: 10px 20px;
+				font-size:1.3em;
+				background: {$color_1};
+				color:{$color_4};
+				border:none;
+				margin-bottom:15px;
+				cursor:pointer;
+			}
+			.button:hover{
+				background: {$color_4};
+				color:{$color_1};
+			}
+			label {
+				display: inline-block;
+				margin-bottom: 5px;
+				font-size:0.9em;
+				font-weight: 700;
+			}
+			/* Админ панель */
+
+
+			@media (max-width: 1120px) {
+				body,#admin_panel,#edit_content{width: 97%;}
+			}
+
+			@media (max-width: 979px){
+				.none_min_979{
+					display:none !important;
+				}
+				.block_min_979{
+					display:block !important;
+				}
+
+				.article_one{
+					width:98% !important;
+					padding:1% !important;
+					clear:boch !important;
+				}
+				.article_item{
+					width:46% !important;
+					padding:3% 2% !important;
+				}
+			}
+
+			@media (max-width: 767px){
+				.none_min_480{
+					display:none !important;
+				}
+				#footer_body {
+					padding: 20px 30px 30px !important;
+				}
+				.article_item{
+					width:96% !important;
+					padding:7% 2% !important;
+				}
+				#logo {
+					text-align:center !important;
+				}
+			}
+			 
+			@media (max-width: 480px){
+
+			}
+			body{
+				color:{$g_color};
+			}
+			h1,h2,h3,h4{
+				color:{$l_color};
+			}
+			a{
+				color: {$n_color};
+			}
+			a:hover{
+				color: {$o_color};
+			}
+			.active{
+				color: {$c_color} !important;
+			}
+			time{
+				color: {$o_color};
+			}
+			#error_reporting{
+				border:1px {$o_color} solid;
+
+			}
+			#error_reporting_body{
+				color:{$o_color};
+			}
+
+			/* Шапка сайта */
+			#navigation_mobile{
+				background: {$b_color};
+			}
+			#navigation_mobile a{
+				color:{$a_color};
+			}
+			#navigation_mobile a:hover{
+				color:{$c_color};
+			}
+
+			#navigation_categories{
+				background: {$a_color};
+			}
+			#navigation_categories a{
+				color:{$b_color};
+				border-right:1px solid {$p_color};
+			}
+			#navigation_categories a:hover{
+				color: {$c_color};
+			}
+			#input_search[type=search] {
+				background: {$a_color} url({$HOST}/templates/{$template_settings}/img/search-icon.png) no-repeat 5px center;
+			}
+			#input_search[type=search]:focus,#input_search[type=search]:hover {
+				background: {$a_color} url({$HOST}/templates/{$template_settings}/img/2search-icon.png) no-repeat 5px center;
+			}
+			#navigation_subcategories{
+				background: {$d_color};
+			}
+			#navigation_subcategories a{
+				color: {$e_color};
+			}
+			#navigation_subcategories a:hover{
+				color: {$f_color};
+			}
+			/* Шапка сайта */
+
+			/* Статьи сайта */
+			.more{
+				color:{$k_color};
+				background:{$i_color};
+				border:1px solid {$i_color};
+			}
+			.more:hover{
+				color:{$i_color};
+				background:{$k_color};
+				border:1px solid {$i_color};
+			}
+
+			.share-buttons{
+				background: {$d_color};
+			}
+			/* .Статьи сайта */
+
+			/* Сайтбар */
+			aside{
+				/*background: {$d_color};*/
+			}
+			/* .Сайтбар */
+
+			/* Футер сайта */
+			#footer_nav{
+				background: {$d_color};
+			}
+
+			#footer_body{
+				color: {$b_color};
+				background: {$a_color};
+			}
+			.social{
+				color: {$b_color};
+			}
+			#infscr-loading {
+				background: {$d_color};
+			}
+			#scroll_to_top{
+				color:{$c_color};
+			}
+			/* .Футер сайта */
+		</style>
+	</head>
+
+	<body id="body">
+
+		<!-- .Шапка сайта -->
+		<header>
+			<nav id="admin_panel">
+				<a onclick="javascript:spoiler('modal_edit');showContent('{$HOST}/{$admin_directory}/index.php?table=settings&id=1');"><span class="icon-cog"></span> настройки</a>
+				<a onclick="javascript:spoiler('modal_edit');showContent('{$HOST}/{$admin_directory}/index.php?table=categories&id=0');"><span class="icon-plus"></span> категорию</a>
+				<a onclick="javascript:spoiler('modal_edit');showContent('{$HOST}/{$admin_directory}/index.php?table=subcategories&id=0');"><span class="icon-plus"></span> подкатегорию</a>
+				<a onclick="javascript:spoiler('modal_edit');showContent('{$HOST}/{$admin_directory}/index.php?table=articles&id=0');"><span class="icon-plus"></span> статью</a>
+				<a onclick="javascript:spoiler('modal_edit');showContent('{$HOST}/{$admin_directory}/index.php?table={$table}&id={$get_admin}');" style="{$edit_button_none}"><span class="icon-write"></span> Редактировать {$edit_label}</a>
+				<a href="{$HOST}/{$admin_directory}/index.php?action=logout" style="border:none;"><span class="icon-switch"></span> Выйти</a>
+			</nav>
+			<div id="modal_edit" style="display:none; overflow:auto;">
+				<script type="text/javascript">
+					function myFunc(el){
+						var inputs_none = document.getElementsByClassName('none');
+						for(i=0; i < inputs_none.length; i++) {
+							inputs_none[i].style.display='none';
+						}
+						k=el.options[el.selectedIndex].value;
+						var inputs = document.getElementsByClassName(k);
+						for(i=0; i < inputs.length; i++) {
+							inputs[i].style.display='block';
+						}
+					}
+				</script>
+				<div id="edit_content"></div>
+				<!--<div id="loading"></div>-->
+			</div>
+			<div style="height:50px;{$admin_panel_style}"> </div>
+			<div id="hader_line"></div>
+			<div id="logo">
+				<a href="{$HOST}">
+					<img src="{$HOST}/templates/{$template_settings}/img/settings/medium/{$image_settings}">
+				</a>
+			</div>
+			<nav id="navigation_mobile" class="block_min_979">
+				<a href="#" onclick="javascript:spoiler('modal_menu')"><span class="icon-menu"></span> МЕНЮ</a>
+			</nav>
+			<nav id="navigation_categories" class="none_min_979">
+				{$navigation_categories}
+			</nav>
+			<nav id="navigation_subcategories" class="none_min_979">
+				{$navigation_subcategories}
+			</nav>
+			<nav id="navigation_string" class="none_min_480">
+				<a href="{$HOST}">{$DOMAIN}</a>{$navigation_string}
+			</nav>
+		</header>
+		<!-- .Шапка сайта -->
+
+		<!-- Основной контент сайта -->
+		{$error_reporting}
+		{$content}
+		<!-- .Основной контент сайта -->
+
+		<!-- Навигация плагина Инфинити -->
+		<nav id="page_nav">
+			{$get}
+		</nav>
+		<!-- .Навигация плагина Инфинити -->
+
+		<!-- .Футер сайта -->
+		<footer>
+			<nav id="footer_nav" class="none_min_979">
+				{$navigation_categories}
+			</nav>
+			<div id="footer_body">
+				<img class="none_min_480" src="{$HOST}/templates/{$template_settings}/img/settings/medium/footer_logo.png" alt="Виды комнатного цветка аспарагус"><br>
+				<p class="none_min_480">{$footer_settings}</p>
+				<p class="none_min_480">{$copyright_settings}</p>
+				<noindex class="none_min_480">
+					<a href="https://www.facebook.com/groups/tvoyasemya" class="social f" target="_blank"><span class="icon-uniE000"></span></a>
+					<a href="https://twitter.com/TvoyaSemya" class="social t" target="_blank"><span class="icon-uniE001"></span></a>
+					<a href="https://plus.google.com/u/0/stream/circles/p3e27a3990a2468f2" class="social g" target="_blank"><span class="icon-uniE004"></span></a>
+					<a href="https://ok.ru/group/53002148643006" class="social ok" target="_blank"><span class="icon-uniE005"></span></a>
+					<a href="https://my.mail.ru/community/tvoya-semya.ru/" class="social mail" target="_blank"><span class="icon-uniE006"></span></a>
+					<a href="http://tvoyasemya.livejournal.com/" class="social lj" target="_blank"><span class="icon-uniE007"></span></a>
+					<a href="http://vk.com/tvoyasemyarf" class="social vk" target="_blank"><span class="icon-uniE002"></span></a>
+					<!--<a href="/rss/elle_ru/rss.xml" class="social" target="_blank"></a>-->
+				</noindex><br>
+				<p><span class="icon-envelope"></span> {$email_settings}<br>
+				<span class="icon-home"></span> {$address_settings}<br>
+				<span class="icon-phone"></span> {$phone_settings}</p>
+			</div>
+		</footer>
+		<!-- .Футер сайта -->
+
+		<!-- Модальное окно меню -->
+		<div id="modal_menu" style="display:none; overflow:auto;">
+			<div onclick="javascript:spoiler('modal_menu')" id="modal_close">X</div>
+		</div>
+		<script type="text/javascript">
+			function spoiler(id) {
+				tinymce.remove();
+				if(document.getElementById(id).style.display == "none"){
+					document.getElementById(id).style.display = "";
+					document.getElementById('body').style.overflow = "hidden";
+
+				} else {
+					document.getElementById(id).style.display = "none";
+					document.getElementById('body').style.overflow = "visible";
+				}
+			}
+		</script>
+		<!-- .Модальное окно меню -->
+
+		<!-- Плагин Изотоп и Инфинити -->
+		<script src="{$HOST}/templates/{$template_settings}/js/isotope.min.js"></script>
+		<script src="{$HOST}/templates/{$template_settings}/js/imagesloaded.min.js"></script>
+		<script src="{$HOST}/templates/{$template_settings}/js/infinitescroll.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var $container = $('#content');
+				$container.imagesLoaded( function(){
+					$container.isotope({
+						itemSelector : '.article_item'
+					});
+				});
+				$container.infinitescroll({
+					navSelector  : '#page_nav',
+					nextSelector : '#page_nav a',
+					itemSelector : '.article_item',
+					loading: {
+						finishedMsg: 'Записи отсутствуют',
+						img: '{$HOST}/templates/tvoyasemya/img/loading.gif'
+					}
+				},
+
+					function( newElements ) {
+						$container.imagesLoaded( function(){
+							$container.isotope( 'appended', $( newElements ) );
+						});
+					}
+				);
+			});
+		</script>
+		<!-- .Плагин Изотоп и Инфинити -->
+
+		<!-- Кнопка прокрутки вверх -->
+		<div id="scroll_to_top">
+			<span class="icon-circle-up"></span>
+		</div>
+		<script src="{$HOST}/templates/{$template_settings}/js/scroll_to_top.js"></script> 
+		<script type="text/javascript"> 
+			$(function() { 
+				$("#scroll_to_top").scrollToTop(); 
+			}); 
+		</script>
+		<!-- .Кнопка прокрутки вверх -->
+
+		<!-- .Яндекс метрика -->
+		<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter35353460 = new Ya.Metrika({id:35353460,
+							webvisor:true,
+							clickmap:true,
+							trackLinks:true,
+							accurateTrackBounce:true});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+		</script>
+		<noscript>
+			<div>
+				<img src="//mc.yandex.ru/watch/35353460" style="position:absolute; left:-9999px;" alt="" />
+			</div>
+		</noscript>
+		<!-- .Яндекс метрика -->
+	</body>
+</html>

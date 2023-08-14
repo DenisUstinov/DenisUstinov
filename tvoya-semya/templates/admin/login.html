@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie6" lang="ru"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie7" lang="ru"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie8" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="ru"><!--<![endif]-->
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{$title_settings}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="description" content="{$description_settings}" />
+		<meta name="keywords" content="{$keywords_settings}" />
+		<meta name="author" content="Denis_Ustinow@mail.ru">
+		<link rel="shortcut icon" href="{$HOST}/templates/{$template_settings}/img/favicon.png">
+		<link rel="apple-touch-icon" href="{$HOST}/templates/{$template_settings}/img/favicon.png">
+		<!--[if lt IE 9]>
+			<script src="{$HOST}/templates/{$template_settings}/js/html5shiv.js"><\/script>
+		<![endif]-->
+		<script src="{$HOST}/templates/{$template_settings}/js/jquery-1.7.1.min.js"></script>
+		<style>
+			html,body{
+				margin:0;
+				padding:0;
+				border:0;
+			}
+			body{
+				width:420px;
+				margin:0 auto;
+				font-size:1.0em;
+				font-family:'Open Sans', sans-serif;
+				color:#1a1a1a;
+			}
+			#login_form{
+				margin-top:40%;
+				width:100%;
+			}
+			.form-group {
+				margin-bottom:15px;
+			}
+			.form-control{
+				width:100%;
+				font-size:1.0em;
+				padding:8px;
+				border:1px solid #ccc;
+				border-left:#de3a3b 1px solid;
+			}
+			.button{
+				padding:8px 18px;
+				font-size:1.3em;
+				margin-bottom:15px;
+				cursor:pointer;
+				color:#f1f1f1;
+				background:#de3a3b;
+				border:#de3a3b 1px solid;
+			}
+			.button:hover{
+				color:#de3a3b;
+				background:#f1f1f1;
+				border:#de3a3b 1px solid;
+			}
+			label {
+				display:inline-block;
+				margin-bottom:5px;
+				font-size:0.9em;
+				font-weight:700;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="login_form" action="" class="zend_form" method="post">
+			<h1>Вход администратора</h1>
+			<div class="form-group">
+				<label class="control-label" for="auth_name">Логин администратора</label>
+				<div class="controls">
+					<input {$other} class="form-control" type="text" name="auth_name" value="" autocomplete="off">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="auth_pass">Пароль адмиистратора</label>
+				<div class="controls">
+					<input {$other} class="form-control" type="password" name="auth_pass" value="" autocomplete="off">
+				</div>
+			</div>
+			<input type="submit" value="Войти" class="button">
+		</form>
+	</body>
+</html>

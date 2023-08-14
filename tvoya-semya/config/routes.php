@@ -1,0 +1,25 @@
+<?php
+
+return [
+	'^'.ADMIN_DIRECTORY.'/login$' => ['controller' => 'Admin', 'action' => 'Login'],
+	'^'.ADMIN_DIRECTORY.'/logout$' => ['controller' => 'Admin', 'action' => 'Logout'],
+	'^'.ADMIN_DIRECTORY.'/edit/(?P<table>[a-z]+)$' => ['controller' => 'Admin', 'action' => 'Edit'],
+	'^'.ADMIN_DIRECTORY.'/form/(?P<table>[a-z]+)/(?P<id>[0-9]+)$' => ['controller' => 'Admin', 'action' => 'Form'],
+	'^sitemap.html$' => ['controller' => 'Article', 'action' => 'Sitemap'],
+	'^contacts.html$' => ['controller' => 'Article', 'action' => 'Contacts'],
+	'^sitemap.xml$' => ['controller' => 'SitemapXml'],
+	'^rss.xml$' => ['controller' => 'Rss'],
+	'^robots.txt$' => ['controller' => 'Robots'],
+	'^send.php$' => ['controller' => 'Send'],
+	'^search/(?P<search_articles>.+)/(?P<current_page>[0-9]+)$' => ['controller' => 'Article', 'action' => 'Search'],
+	'^search/(?P<search_articles>.+)$' => ['controller' => 'Article', 'action' => 'Search'],
+	'^tags/(?P<tags_articles>.+)/(?P<current_page>[0-9]+)$' => ['controller' => 'Article', 'action' => 'Tag'],
+	'^tags/(?P<tags_articles>.+)$' => ['controller' => 'Article', 'action' => 'Tag'],
+	'^(?P<url_categories>[a-z0-9-]+)/(?P<url_subcategories>[a-z0-9-]+)/(?P<current_page>[0-9]+)$' => ['controller' => 'Article', 'action' => 'Subcategory'],
+	'^(?P<url_categories>[a-z0-9-]+)/(?P<url_subcategories>[a-z0-9-]+)/(?P<url_articles>[a-z0-9-]+).html$' => ['controller' => 'Article', 'action' => 'Article'],
+	'^(?P<url_categories>[a-z0-9-]+)/(?P<current_page>[0-9]+)$' => ['controller' => 'Article', 'action' => 'Category'],
+	'^(?P<url_categories>[a-z0-9-]+)/(?P<url_subcategories>[a-z0-9-]+)$' => ['controller' => 'Article', 'action' => 'Subcategory'],
+	'^(?P<current_page>[0-9]+)$' => ['controller' => 'Article', 'action' => 'Main'],
+	'^(?P<url_categories>[a-z0-9-]+)$' => ['controller' => 'Article', 'action' => 'Category'],
+	'^$' => ['controller' => 'Article', 'action' => 'Main'],
+];
