@@ -66,7 +66,7 @@ git, php, python, html, css, asyncio, docker, fastapi, mysql, postgresql, Linux,
 
 Проект не поддерживается. Некоторые функции, в целях безопасности, отключены.
 
-* [Ссылка на сайт product-catalog](https://product-catalog.denisustinov.name){:target="_blank"}
+* [Ссылка на сайт product-catalog](https://product-catalog.denisustinov.name)<!-- _blank -->
 * [Ссылка на код проект product-catalog](https://github.com/DenisUstinov/DenisUstinov/tree/main/product-catalog)
 
 Я впервые начал свой путь в веб-разработке, создав скрипт для управления прайсами заказов. Пройдя первый курс по PHP, я погрузился в творческий процесс и создал свою первую собственную CMS. Несмотря на то, что она скорее представляла из себя набор кривых и косых элементов, она функционировала и служила каталогом товаров с возможностью предварительного заказа продукции компании, в которой я тогда работал в качестве представителя.
