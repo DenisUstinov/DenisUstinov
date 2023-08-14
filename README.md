@@ -115,7 +115,7 @@ git, php, python, html, css, asyncio, docker, fastapi, mysql, postgresql, Linux,
 В поисках новых вызовов и расширения своих навыков веб-разработки, я решился на создание своего собственного фреймворка на языке PHP. Основная цель состояла в создании информационного сайта с использованием паттерна MVC, чтобы погрузиться в разработку более сложных веб-приложений.
 
 Проект не поддерживается. Некоторые функции, в целях безопасности, отключены.
-* Ссылка на сайт (оцените скорость загрузки сайта): [tvoya-semya](https://tvoya-semya.denisustinov.name)
+* Ссылка на сайт (оцените скорость работы фреймворка): [tvoya-semya](https://tvoya-semya.denisustinov.name)
 * Ссылка на код проект: [GitHub](https://github.com/DenisUstinov/DenisUstinov/tree/main/tvoya-semya)
 
 ![Project interface](https://github.com/DenisUstinov/DenisUstinov/blob/main/tvoya-semya/project_interface.png)
