@@ -27,13 +27,13 @@
 		$mail->Host = 'smtp.mail.ru';
 		$mail->SMTPAuth = true;
 		$mail->Username = 'contacts@tvoya-semya.ru';
-		$mail->Password = 'DangaR2015';
+		$mail->Password = 'DangssR201a';
 		$mail->SMTPSecure = 'ssl';
 		$mail->Port = '465';
 
 		$mail->CharSet = 'UTF-8';
 		$mail->setFrom('contacts@tvoya-semya.ru', 'Дениса Устинова');         // Адрес от кого
-		$mail->addAddress('denis_ustinow@mail.ru', 'Денису Устинову');              // Адрес кому
+		$mail->addAddress('denisus@mail.ru', 'Денису Устинову');              // Адрес кому
 
 		$mail->isHTML(true);
 		$mail->Subject = $header_mail;
