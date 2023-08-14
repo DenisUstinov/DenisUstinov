@@ -1,3 +1,0 @@
-User-agent: *
-Host: http://xn--80afdbf6bfdbh.xn--p1ai/
-Sitemap: http://xn--80afdbf6bfdbh.xn--p1ai/sitemap.php
