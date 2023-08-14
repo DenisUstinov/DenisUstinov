@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Погода сейчас, днем и на 10 дней, города Москва, Москва и Московская область, Россия</title>
+		<meta name='yandex-verification' content='69ddee8b13c2663a' />
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, minimum-scale=0.8, user-scalable=no">
+		<meta name="description" content="Прогноз погоды на 10 дней города Москва, Москва и Московская область, Россия">
+		<meta name="keywords" content="погода,днем,10 дней,неделю,месяц,прогноз,яндекс погода,гистметео,гидромецентр,Москва,Москва и Московская область,Россия">
+		<link href="http://pogodadnem.local/css/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="http://pogodadnem.local/favicon.ico" type="image/x-icon" />
+		<script src="http://pogodadnem.local/js/css.js"></script>
+		<script src="http://pogodadnem.local/js/jquery-1.11.3.min.js"></script>
+		<script src="http://pogodadnem.local/js/jquery.mobile.custom.min.js"></script>
+		<script src="http://pogodadnem.local/js/jquery.slider-rm.js"></script>
+		<style>
+			body{
+				background: url('http://pcwallart.com/images/blue-color-gradient-wallpaper-2.jpg') no-repeat center center fixed; 
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				color:#ffffff;
+			}
+			.slider-rm-style .slider-rm-nav__prev {
+				background: url(http://pogodadnem.local/core/color.php?image_name=arrow-left.png&color_icon=ffffff) center center no-repeat;
+			}
+			.slider-rm-style .slider-rm-nav__next {
+				background: url(http://pogodadnem.local/core/color.php?image_name=arrow-right.png&color_icon=ffffff) center center no-repeat;
+			}
+			.no_active:hover{
+				background:rgba(255, 255, 255,0.1);
+			}
+			.active{
+				background:rgba(255, 255, 255,0.3);
+			}
+			.active::after {
+				border-top: 15px solid rgba(255, 255, 255,0.3); 
+			}
+			.details_one{
+				border-left: 1px solid rgba(255, 255, 255,0.3);
+				background:rgba(255, 255, 255,0.3);
+			}
+			.header_section{
+				border-bottom:1px solid rgba(255, 255, 255,0.3);
+			}
+			#yet{
+				background:rgba(255, 255, 255,0.3);
+			}
+			.modal{
+			    box-shadow: 0px 0px 100px 50px rgba(255, 255, 255,0.3);
+			}
+			footer{
+				border-top:1px solid rgba(255, 255, 255,0.3);
+			}
+		</style>
+	</head>
+	<body id="body">
+		<section id="weather">
+			<div id="today">
+				<div style="font-size:1.7em;">Москва, Москва и Московская область, Россия <a style="cursor: pointer;color:#ffffff;text-decoration:none;" onclick="javascript:spoiler('modal_city')"> ≡</a></div>
+				<div style="font-weight:200;">Пятница, 29 апреля 2016 года</div>
+				<div style="font-size:0.7em;">Ваш айпи: 127.0.0.1</div>
+				<div style="font-size:5.0em">14<span style="font-size:0.3em;">°C </span> <img class="img_fact" src="http://pogodadnem.local/core/color.php?image_name=skc_d.png&color_icon=ffffff" width="60" height="60"></div>
+				<div style="font-size:1.4em;">ясно</div>
+				<div style="font-size:0.7em;">Ветер восточный &#8592;  6.0 м/с&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Относительная влажность 38 %</div>
+				<div style="font-size:0.7em;">Атмосферное давление 748 мм&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Среднее давление на уровне моря 997 мм</div>
+			</div>
+			<!--<div id="search">
+				<div style="text-align:right;font-size:0.7em;">Ваш айпи: 127.0.0.1</div>
+			</div>-->
+			<div style="clear:left"></div>
+			<div class="day-group">
+				<div id="slider">
+					<div class="slider-rm-ul">
+						<div>
+	<div class="day active" onclick="javascript:modals('id_0'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Пят, 29</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+16° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +7°</span>
+		</div>
+		<div style="font-size:0.7em;">облачно с прояснениями</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_1'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Суб, 30</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+15° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +6°</span>
+		</div>
+		<div style="font-size:0.7em;">облачно с прояснениями</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_2'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Вос, 1</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=bkn_-ra_d.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+13° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +9°</span>
+		</div>
+		<div style="font-size:0.7em;">облачно с прояснениями, небольшой дождь</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_3'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Пон, 2</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+12° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +9°</span>
+		</div>
+		<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_4'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Вто, 3</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+15° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +5°</span>
+		</div>
+		<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_5'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Сре, 4</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+17° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +9°</span>
+		</div>
+		<div style="font-size:0.7em;">облачно с прояснениями</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_6'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Чет, 5</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+18° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +10°</span>
+		</div>
+		<div style="font-size:0.7em;">пасмурно</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_7'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Пят, 6</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+17° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +10°</span>
+		</div>
+		<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_8'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Суб, 7</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+17° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +10°</span>
+		</div>
+		<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	</div>
+</div><div>
+	<div class="day no_active" onclick="javascript:modals('id_9'); this.className='day active';">
+		<div style="padding-bottom:5px;font-size:0.95em;font-weight:400;">Вос, 8</div>
+		<div style="padding-bottom:0px;">
+			<img class="img_prev" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff" width="30px" height="30px">
+		</div>
+		<div style="padding-bottom:0px;font-size:1.5em;font-weight:400;">
+			+16° <span style="font-weight:100;font-size:0.5em;color:#ffffff"> +10°</span>
+		</div>
+		<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	</div>
+</div>
+					</div>
+				</div>
+				<div style="clear:left"></div>
+			</div>
+			<div id="id_0" class="details_all" style="display:block;">
+	<div class="header_section">Пятница, 29 апреля 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+14°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +7°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">малооблачно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 6.0 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 51 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 754 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1005 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+16°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +15°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">облачно с прояснениями</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 6.1 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 38 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 754 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1005 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+15°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +10°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 4.2 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 53 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 754 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1005 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+9°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +7°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">облачно с прояснениями</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 3.1 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 69 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 754 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1005 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:49 до 20:04</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=4.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 01:30 до 10:16</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_1" class="details_all" style="display:none;">
+	<div class="header_section">Суббота, 30 апреля 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +7°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">малооблачно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 4.2 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 61 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 755 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1007 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+15°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +13°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">облачно с прояснениями</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 4.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 40 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 754 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1005 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=skc_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">ясно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 4.7 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 53 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 755 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1006 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+9°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +6°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=skc_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">ясно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северный &#8595; </span> 2.6 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 81 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 754 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1005 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:47 до 20:06</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=4.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 02:06 до 11:26</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_2" class="details_all" style="display:none;">
+	<div class="header_section">Воскресенье, 1 мая 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+11°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +6°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">малооблачно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северный &#8595; </span> 3.9 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 69 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 755 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1007 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +11°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_-ra_d.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">облачно с прояснениями, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 7.1 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 41 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 753 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1004 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+12°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +10°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 4.2 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 79 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 753 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1004 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+10°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северный &#8595; </span> 4.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 87 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 752 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1003 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:45 до 20:08</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=5.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 02:37 до 12:40</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_3" class="details_all" style="display:none;">
+	<div class="header_section">Понедельник, 2 мая 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+10°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 4.8 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 82 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 752 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1003 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+12°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +10°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 3.4 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 63 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 751 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1001 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+12°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +11°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">облачно с прояснениями</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 2.0 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 87 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 751 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1001 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+11°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 3.0 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 87 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 751 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1001 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:43 до 20:10</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=5.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 03:05 до 13:59</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_4" class="details_all" style="display:none;">
+	<div class="header_section">Вторник, 3 мая 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+12°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +8°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 3.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 78 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 751 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1001 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+15°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +12°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 3.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 63 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 750 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1000 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+15°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +11°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=skc_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">ясно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 2.0 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 93 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 749 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 999 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+11°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +5°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=skc_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">ясно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северный &#8595; </span> 2.4 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 93 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 749 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 999 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:41 до 20:12</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=6.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 03:31 до 15:22</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_5" class="details_all" style="display:none;">
+	<div class="header_section">Среда, 4 мая 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+12°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +5°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=skc_d.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">ясно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 2.3 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 80 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 748 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 997 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+17°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +12°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_d.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">облачно с прояснениями</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 2.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 47 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 748 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 997 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+17°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +12°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">малооблачно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 2.3 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 69 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 746 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 995 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+12°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 2.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 80 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 744 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 992 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:38 до 20:14</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=7.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 03:56 до 16:46</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_6" class="details_all" style="display:none;">
+	<div class="header_section">Четверг, 5 мая 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 4.0 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 73 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 742 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 989 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+18°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +13°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер восточный &#8592; </span> 4.6 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 76 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 741 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 988 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+18°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +13°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 3.2 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 84 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 740 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 987 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +10°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 3.0 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 96 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 740 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 987 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:36 до 20:16</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=7.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:22 до 18:12</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_7" class="details_all" style="display:none;">
+	<div class="header_section">Пятница, 6 мая 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-восточный &#8601; </span> 3.7 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 86 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 740 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 987 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+17°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +13°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северный &#8595; </span> 3.7 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 69 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 742 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 989 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+17°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +13°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северный &#8595; </span> 2.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 79 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 744 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 992 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +10°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-западный &#8600; </span> 2.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 85 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 746 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 995 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:34 до 20:18</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=8.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:51 до 19:38</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_8" class="details_all" style="display:none;">
+	<div class="header_section">Суббота, 7 мая 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-западный &#8600; </span> 3.1 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 70 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 748 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 997 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+17°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +13°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-западный &#8600; </span> 3.5 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 39 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 748 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 997 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+17°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +12°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер северо-западный &#8600; </span> 2.3 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 55 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 749 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 999 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+12°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +10°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер западный &#8594; </span> 2.6 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 71 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 750 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1000 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:32 до 20:20</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=8.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 05:24 до 21:00</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div><div id="id_9" class="details_all" style="display:none;">
+	<div class="header_section">Воскресенье, 8 мая 2016 года</div>
+	<div class="details_one">
+	<div style="font-weight:100;">Утром</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+13°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +9°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер западный &#8594; </span> 3.6 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 62 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 751 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1001 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Днем</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+16°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +13°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=ovc_-ra.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">пасмурно, небольшой дождь</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер западный &#8594; </span> 4.3 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 39 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 750 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1000 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Вечером</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+16°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +12°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">облачно с прояснениями</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер южный &#8593; </span> 2.9 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 59 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 751 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1001 мм</div>
+</div><div class="details_one">
+	<div style="font-weight:100;">Ночью</div>
+	<div style="font-size:3.0em">
+		<span class="text_smal">+12°</span> <span style="font-weight:100;font-size:0.35em;color:#ffffff;"> +10°</span>
+		<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=bkn_n.png&color_icon=ffffff">
+	</div>
+	<div style="font-size:0.7em;">облачно с прояснениями</div>
+	<div style="font-size:0.7em;"><span class="none1210">Ветер южный &#8593; </span> 2.8 м/с</div>
+	<div style="font-size:0.7em;"><span class="none1210">Относительная влажность</span> 62 % </div>
+	<div style="font-size:0.7em;"><span class="none1210">Атмосферное давление</span> 752 мм</div>
+	<div style="font-size:0.7em;"><span class="none1210">Среднее давление на уровне моря</span> 1003 мм</div>
+</div>
+	<div style="clear:left"></div>
+	<!--<div class="header_section">Подробности дня</div>-->
+	<div id="yet">
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=16.png&color_icon=ffffff" width="30" height="30"> 
+				Солнце
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 04:30 до 20:22</div>
+		</div>
+		<div style="float:left;padding:15px 0 5px 20px;width:160px;">
+			<div style="margin-bottom:5px;">
+				<img class="img_details" src="http://pogodadnem.local/core/color.php?image_name=9.png&color_icon=ffffff" width="30" height="30"> 
+				Луна
+			</div>
+			<div style="font-size:0.7em;margin-bottom:10px;">с 06:03 до 22:15</div>
+		</div>
+		<div style="clear:left"></div>
+	</div>
+</div>
+			<div style="width:93%;height:100px;margin:0 auto;margin-bottom:20px;">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- ПогодаДнем_Футер -->
+				<ins class="adsbygoogle"
+					 style="display:block"
+					 data-ad-client="ca-pub-2940100433717238"
+					 data-ad-slot="3434373901"
+					 data-ad-format="auto"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+			<script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
+            <script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
+            <div style="margin:0 auto;width:300px;" class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,blogger,qzone,tumblr,whatsapp"></div>
+			<footer><a style="color:#ffffff;text-decoration:none;" href="https://pogoda.yandex.ru" target="_blank">Яндекс погода © ПогодаДнем.рф</a></footer>
+		</section>
+
+		<!-- Модальное окно -->
+		<div id="modal_city" class="modal" style="display:none; overflow:auto;">
+			<div class="modal_body">
+				Настройки осуществляются один раз! <!--<a href="">(Посмотреть 30 секундное видео по настройке)</a>--><br>
+				Впоследствии сайт будет применять их автоматически. Не отключайте куки для сайта.<br><br>
+				<form method="get">
+					<label>Выбирете город:</label>
+					<select id="select_city" name="city_id">
+						<option value="27612">Москва</option>
+						<option value="36072">Абаза</option><option value="29862">Абакан</option><option value="28818">Абдулино</option><option value="28731">Абзаково</option><option value="37003">Абинск</option><option value="23383">Агата</option><option value="28518">Агидель</option><option value="30859">Агинское</option><option value="28403">Агрыз</option><option value="28729">Аджигардак</option><option value="37171">Адлер</option><option value="37015">Адыгейск</option><option value="28617">Азнакаево</option><option value="34723">Азов</option><option value="36079">Ак-Довурак</option><option value="34734">Аксай</option><option value="37227">Алагир</option><option value="28248">Алапаевск</option><option value="27679">Алатырь</option><option value="31004">Алдан</option><option value="29937">Алейск</option><option value="33613">Александрия</option><option value="27428">Александров</option><option value="34391">Александров-Гай</option><option value="32061">Александров-Сахалинский</option><option value="28130">Александровск</option><option value="34322">Алексеевка</option><option value="27405">Алексин</option><option value="29589">Алзамай</option><option value="33959">Алушта</option><option value="34522">Алчевск</option><option value="28707">Альметьевск</option><option value="23022">Амдерма</option><option value="31559">Амурск</option><option value="25563">Анадырь</option><option value="37001">Анапа</option><option value="30715">Ангарск</option><option value="26480">Андреаполь</option><option value="29543">Анжеро-Судженск</option><option value="32155">Анива</option><option value="22213">Апатиты</option><option value="27521">Апрелевка</option><option value="37012">Апшеронск</option><option value="28442">Арамиль</option><option value="28548">Аргаяш</option><option value="37239">Аргун</option><option value="27781">Ардатов</option><option value="37219">Ардон</option><option value="27653">Арзамас</option><option value="34058">Аркадак</option><option value="37031">Армавир</option><option value="33909">Армянск</option><option value="31938">Арсеньев</option><option value="31974">Артем</option><option value="34510">Артемовск</option><option value="28346">Артемовский</option><option value="22550">Архангельск</option><option value="37111">Архыз</option><option value="33897">Арциз</option><option value="30803">Аршан</option><option value="22724">Асбест</option><option value="29347">Асино</option><option value="33915">Аскания-Нова</option><option value="34880">Астрахань</option><option value="34069">Аткарск</option><option value="34577">Ахтубинск</option><option value="33383">Ахтырка</option><option value="29467">Ачинск</option><option value="37236">Ачхой-Мартан</option><option value="28636">Аша</option><option value="28427">Ашатли</option><option value="27008">Бабаево</option><option value="30822">Бабушкин</option><option value="27597">Бавлы</option><option value="26705">Багратионовск</option><option value="30818">Байкальск</option><option value="28938">Баймак</option><option value="28735">Бакал</option><option value="37213">Баксан</option><option value="27609">Балабаново</option><option value="34315">Балаклея</option><option value="34085">Балаково</option><option value="27452">Балахна</option><option value="27607">Балашиха</option><option value="34152">Балашов</option><option value="30866">Балей</option><option value="33757">Балта</option><option value="26701">Балтийск</option><option value="28830">Банное</option><option value="29612">Барабинск</option><option value="30636">Баргузин</option><option value="29838">Барнаул</option><option value="27980">Барыш</option><option value="34722">Батайск</option><option value="33258">Бахмач</option><option value="33996">Бахчисарай</option><option value="27217">Бежецк</option><option value="34539">Белая Калитва</option><option value="28105">Белая Холуница</option><option value="33464">Белая Церковь</option><option value="34214">Белгород</option><option value="33830">Белгород-Днестровский</option><option value="28718">Белебей</option><option value="27816">Белев</option><option value="27955">Белинский</option><option value="29745">Белово</option><option value="26069">Белогорка</option><option value="33966">Белогорск</option><option value="22939">Белозерск</option><option value="36092">Белокуриха</option><option value="22551">Беломорск</option><option value="28831">Белорецк</option><option value="37013">Белореченск</option><option value="27701">Белоусово</option><option value="23633">Белоярский</option><option value="29241">Белый Яр</option><option value="26585">Белый</option><option value="33444">Бердичев</option><option value="29729">Бердск</option><option value="34717">Бердянск</option><option value="28028">Березники</option><option value="29542">Березовский</option><option value="37220">Беслан</option><option value="29947">Бийск</option><option value="31832">Бикин</option><option value="25147">Билибино</option><option value="31713">Биробиджан</option><option value="28621">Бирск</option><option value="29588">Бирюсинск</option><option value="34323">Бирюч</option><option value="31510">Благовещенск</option><option value="34958">Благодарный</option><option value="34138">Бобров</option><option value="28443">Богданович</option><option value="27820">Богородицк</option><option value="27557">Богородск</option><option value="29553">Боготол</option><option value="34336">Богучар</option><option value="30253">Бодайбо</option><option value="26096">Бокситогорск</option><option value="27696">Болгар</option><option value="33887">Болград</option><option value="26298">Бологое</option><option value="29539">Болотное</option><option value="27721">Болохово</option><option value="27809">Болхов</option><option value="31975">Большой Камень</option><option value="31253">Бомнак</option><option value="27460">Бор</option><option value="30965">Борзя</option><option value="34146">Борисоглебск</option><option value="33347">Борисполь</option><option value="26291">Боровичи</option><option value="27001">Боровск</option><option value="29577">Бородино</option><option value="30405">Братск</option><option value="35041">Бреды</option><option value="27601">Бронницы</option><option value="26898">Брянск</option><option value="28711">Бугульма</option><option value="28806">Бугуруслан</option><option value="37061">Буденновск</option><option value="28909">Бузулук</option><option value="27242">Буй</option><option value="37471">Буйнакск</option><option value="27695">Буинск</option><option value="33644">Буковель</option><option value="34239">Бутурлиновка</option><option value="34364">Быково</option><option value="22805">Валаам</option><option value="26289">Валдай</option><option value="34321">Валуйки</option><option value="33341">Васильков</option><option value="37361">Ведено</option><option value="26578">Велиж</option><option value="26477">Великие Луки</option><option value="26179">Великий Новгород</option><option value="22981">Великий Устюг</option><option value="22867">Вельск</option><option value="22686">Вендинга</option><option value="27822">Венёв</option><option value="28216">Верещагино</option><option value="27610">Верея</option><option value="25538">Верхнее Пенжино</option><option value="28833">Верхнеуральск</option><option value="34579">Верхний Баскунчак</option><option value="28244">Верхний Тагил</option><option value="28541">Верхний Уфалей</option><option value="28447">Верхняя Пышма</option><option value="28242">Верхняя Салда</option><option value="28232">Верхняя Тура</option><option value="33649">Верховина</option><option value="28144">Верхотурье</option><option value="24166">Верхоянск</option><option value="27017">Весьегонск</option><option value="27277">Ветлуга</option><option value="27503">Видное</option><option value="33898">Вилково</option><option value="24641">Вилюйск</option><option value="32582">Вилючинск</option><option value="33562">Винница</option><option value="22925">Винницы</option><option value="30054">Витим</option><option value="30308">Вихоревка</option><option value="27349">Вичуга</option><option value="31960">Владивосток</option><option value="37228">Владикавказ</option><option value="27532">Владимир</option><option value="27524">Внуково</option><option value="33777">Вознесенск</option><option value="22829">Вознесенье</option><option value="34560">Волгоград</option><option value="34562">Волгодонск</option><option value="27343">Волгореченск</option><option value="27592">Волжск</option><option value="34463">Волжский</option><option value="27037">Вологда</option><option value="27550">Володарск</option><option value="27502">Волоколамск</option><option value="26067">Волосово</option><option value="26159">Волхов</option><option value="23918">Волчанск</option><option value="34086">Вольск</option><option value="23226">Воркута</option><option value="34123">Воронеж</option><option value="33643">Ворохта</option><option value="27556">Ворсма</option><option value="27530">Воскресенск</option><option value="28318">Воткинск</option><option value="26071">Всеволожск</option><option value="23612">Вуктыл</option><option value="22892">Выборг</option><option value="27643">Выкса</option><option value="22894">Высоцк</option><option value="22837">Вытегра</option><option value="26393">Вышний Волочек</option><option value="31786">Вяземский</option><option value="27543">Вязники</option><option value="26695">Вязьма</option><option value="28502">Вятские Поляны</option><option value="27443">Гаврилов Посад</option><option value="27330">Гаврилов-Ям</option><option value="27507">Гагарин</option><option value="22020">Гаджиево</option><option value="35036">Гай</option><option value="33686">Гайворон</option><option value="33577">Гайсин</option><option value="27243">Галич</option><option value="26068">Гатчина</option><option value="26708">Гвардейск</option><option value="26157">Гдов</option><option value="37004">Геленджик</option><option value="33910">Геническ</option><option value="37058">Георгиевск</option><option value="28214">Глазов</option><option value="33156">Глухов</option><option value="27628">Голицыно</option><option value="27551">Горбатов</option><option value="34520">Горловка</option><option value="36052">Горно-Алтайск</option><option value="28236">Горнозаводск</option><option value="36037">Горняк</option><option value="27453">Городец</option><option value="34566">Городище</option><option value="34845">Городовиковск</option><option value="27546">Гороховец</option><option value="37014">Горячий Ключ</option><option value="30731">Горячинск</option><option value="34206">Грайворон</option><option value="33363">Гребёнка</option><option value="30732">Гремячинск</option><option value="37235">Грозный</option><option value="27937">Грязи</option><option value="27041">Грязовец</option><option value="28134">Губаха</option><option value="34117">Губкин</option><option value="23551">Губкинский</option><option value="37244">Гудермес</option><option value="34533">Гуково</option><option value="34935">Гулькевичи</option><option value="34606">Гуляйполе</option><option value="33997">Гурзуф</option><option value="29743">Гурьевск</option><option value="26714">Гусев</option><option value="30830">Гусиноозерск</option><option value="27539">Гусь-Хрустальный</option><option value="28720">Давлеканово</option><option value="37469">Дагестанские Огни</option><option value="37005">Дагомыс</option><option value="28457">Далматово</option><option value="31957">Дальнегорск</option><option value="31873">Дальнереченск</option><option value="27235">Данилов</option><option value="34267">Даниловка</option><option value="27922">Данков</option><option value="22762">Двинской Березник</option><option value="28431">Дегтярск</option><option value="27416">Дедовск</option><option value="26673">Демидов</option><option value="26381">Демянск</option><option value="37470">Дербент</option><option value="26785">Десногорск</option><option value="33934">Джанкой</option><option value="37335">Джейрах</option><option value="37009">Джубга</option><option value="27457">Дзержинск</option><option value="29573">Дивногорск</option><option value="37225">Дигора</option><option value="33505">Диканька</option><option value="20674">Диксон</option><option value="27799">Димитровград</option><option value="34104">Дмитриев-Льговский</option><option value="27419">Дмитров</option><option value="34001">Дмитровск</option><option value="33372">Днепродзержинск</option><option value="34504">Днепропетровск</option><option value="26268">Дно</option><option value="28222">Добрянка</option><option value="32133">Долинск</option><option value="33719">Долинская</option><option value="37197">Домбай</option><option value="27613">Домодедово</option><option value="34532">Донецк</option><option value="27826">Донской</option><option value="26687">Дорогобуж</option><option value="33648">Драгобрат</option><option value="33398">Дрогобыч</option><option value="27414">Дубна</option><option value="34462">Дубовка</option><option value="23074">Дудинка</option><option value="26579">Духовщина</option><option value="28614">Дюртюли</option><option value="26900">Дятьково</option><option value="33929">Евпатория</option><option value="27623">Егорьевск</option><option value="34727">Ейск</option><option value="28440">Екатеринбург</option><option value="28506">Елабуга</option><option value="34253">Елань</option><option value="27648">Елатьма</option><option value="27928">Елец</option><option value="32548">Елизово</option><option value="26783">Ельня</option><option value="28743">Еманжелинск</option><option value="23704">Емва</option><option value="34525">Енакиево</option><option value="29263">Енисейск</option><option value="24817">Ербогачен</option><option value="27604">Ермолино</option><option value="34186">Ершов</option><option value="37053">Ессентуки</option><option value="26099">Ефимовский</option><option value="27921">Ефремов</option><option value="33581">Жашков</option><option value="37052">Железноводск</option><option value="34002">Железногорск</option><option value="30316">Железногорск-Илимский</option><option value="34047">Жердевка</option><option value="24343">Жиганск</option><option value="34777">Жигулевск</option><option value="26896">Жиздра</option><option value="34263">Жирновск</option><option value="33325">Житомир</option><option value="33564">Жмеринка</option><option value="27702">Жуков</option><option value="26894">Жуковка</option><option value="27626">Жуковский</option><option value="30968">Забайкальск</option><option value="31527">Завитинск</option><option value="28466">Заводоуковск</option><option value="27354">Заволжск</option><option value="27450">Заволжье</option><option value="28641">Завьялиха</option><option value="34028">Задонск</option><option value="28605">Заинск</option><option value="30914">Закаменск</option><option value="29579">Заозерный</option><option value="22015">Заозерск</option><option value="26485">Западная Двина</option><option value="22006">Заполярный</option><option value="34601">Запорожье</option><option value="27600">Зарайск</option><option value="28550">Заречный</option><option value="29836">Заринск</option><option value="33899">Затока</option><option value="27589">Звенигово</option><option value="27508">Звенигород</option><option value="33586">Звенигородка</option><option value="34534">Зверево</option><option value="33302">Здолбунов</option><option value="29480">Зеленогорск</option><option value="27602">Зеленоград</option><option value="26608">Зеленоградск</option><option value="27591">Зеленодольск</option><option value="37056">Зеленокумск</option><option value="34735">Зерноград</option><option value="31300">Зея</option><option value="30603">Зима</option><option value="28828">Зирган</option><option value="28630">Златоуст</option><option value="26992">Злынка</option><option value="36038">Змеиногорск</option><option value="34314">Змиёв</option><option value="34571">Знаменск</option><option value="33400">Золочев</option><option value="26497">Зубцов</option><option value="28201">Зуевка</option><option value="28327">Иван-Гора</option><option value="26054">Ивангород</option><option value="27347">Иваново</option><option value="33526">Ивано-Франковск</option><option value="23921">Ивдель</option><option value="23274">Игарка</option><option value="30686">Игнашино</option><option value="28411">Ижевск</option><option value="37473">Избербаш</option><option value="33889">Измаил</option><option value="34945">Изобильный</option><option value="34415">Изюм</option><option value="29586">Иланский</option><option value="34461">Иловля</option><option value="33836">Ильичёвск</option><option value="27872">Инза</option><option value="33992">Инкерман</option><option value="27861">Инсар</option><option value="23327">Инта</option><option value="27485">Йошкар-Ола</option><option value="34955">Ипатово</option><option value="28351">Ирбит</option><option value="30710">Иркутск</option><option value="33340">Ирпень</option><option value="28688">Исилькуль</option><option value="29730">Искитим</option><option value="27511">Истра</option><option value="28573">Ишим</option><option value="28829">Ишимбай</option><option value="30729">Кабанск</option><option value="27039">Кадников</option><option value="23903">Кажим</option><option value="27595">Казань</option><option value="33445">Казатин</option><option value="34247">Калач</option><option value="28696">Калачинск</option><option value="34552">Калач-на-Дону</option><option value="22408">Калевала</option><option value="26702">Калининград</option><option value="34164">Калининск</option><option value="29850">Калтан</option><option value="27703">Калуга</option><option value="33527">Калуш</option><option value="27317">Калязин</option><option value="28416">Камбарка</option><option value="33548">Каменец-Подольский</option><option value="27961">Каменка</option><option value="22898">Каменногорск</option><option value="37025">Каменномостский</option><option value="28449">Каменск-Уральский</option><option value="34535">Каменск-Шахтинский</option><option value="29822">Камень-на-Оби</option><option value="27442">Камешково</option><option value="34893">Камызяк</option><option value="34363">Камышин</option><option value="28451">Камышлов</option><option value="27587">Канаш</option><option value="22217">Кандалакша</option><option value="33475">Канев</option><option value="29581">Канск</option><option value="28544">Карабаш</option><option value="37476">Карабудахкент</option><option value="37229">Карабулак</option><option value="29814">Карасук</option><option value="37116">Карачаевск</option><option value="27901">Карачев</option><option value="29122">Каргасок</option><option value="29624">Каргат</option><option value="22845">Каргополь</option><option value="28040">Карпинск</option><option value="28941">Карталы</option><option value="27323">Касимов</option><option value="28546">Касли</option><option value="37252">Каспийск</option><option value="28639">Катав-Ивановск</option><option value="28458">Катайск</option><option value="33870">Каховка</option><option value="28135">Качканар</option><option value="27316">Кашин</option><option value="27627">Кашира</option><option value="37206">Кашхатау</option><option value="29314">Кедровый</option><option value="30102">Кежма</option><option value="29642">Кемерово</option><option value="22520">Кемь-Порт</option><option value="33983">Керчь</option><option value="34668">Кетченеры</option><option value="33345">Киев</option><option value="22737">Кижи</option><option value="28131">Кизел</option><option value="37249">Кизилюрт</option><option value="37163">Кизляр</option><option value="27827">Кимовск</option><option value="27412">Кимры</option><option value="26059">Кингисепп</option><option value="28803">Кинель</option><option value="27346">Кинешма</option><option value="27818">Киреевск</option><option value="30230">Киренск</option><option value="27438">Киржач</option><option value="27019">Кириллов</option><option value="26080">Кириши</option><option value="27199">Киров</option><option value="28343">Кировград</option><option value="33711">Кировоград</option><option value="27198">Кирово-Чепецк</option><option value="26075">Кировск</option><option value="33972">Кировское</option><option value="28009">Кирс</option><option value="27957">Кирсанов</option><option value="29749">Киселевск</option><option value="37123">Кисловодск</option><option value="27631">Климовск</option><option value="27417">Клин</option><option value="26984">Клинцы</option><option value="27576">Княгинино</option><option value="33849">Коблево</option><option value="22204">Ковдор</option><option value="33173">Ковель</option><option value="27348">Ковров</option><option value="27759">Ковылкино</option><option value="23748">Когалым</option><option value="29194">Кодинск</option><option value="27708">Козельск</option><option value="27590">Козловка</option><option value="27479">Козьмодемьянск</option><option value="22112">Кола</option><option value="27164">Кологрив</option><option value="27625">Коломна</option><option value="29230">Колпашево</option><option value="26081">Колпино</option><option value="27446">Кольчугино</option><option value="27332">Комсомольск</option><option value="31561">Комсомольск-на-Амуре</option><option value="27415">Конаково</option><option value="22727">Кондопога</option><option value="27709">Кондрово</option><option value="33261">Конотоп</option><option value="34644">Константиновск</option><option value="28649">Копейск</option><option value="27834">Кораблино</option><option value="34926">Кореновск</option><option value="28643">Коркино</option><option value="27510">Королев</option><option value="33215">Коростень</option><option value="34212">Короча</option><option value="32158">Корсаков</option><option value="22885">Коряжма</option><option value="22553">Костомукша</option><option value="27333">Кострома</option><option value="34655">Котельниково</option><option value="27283">Котельнич</option><option value="22887">Котлас</option><option value="34268">Котово</option><option value="33756">Котовск</option><option value="27445">Кохма</option><option value="36259">Кош-Агач</option><option value="34511">Краматорск</option><option value="22980">Красавино</option><option value="37107">Красная Поляна</option><option value="34515">Красноармейск</option><option value="23917">Красновишерск</option><option value="33963">Красногвардейское</option><option value="27513">Красногорск</option><option value="34929">Краснодар</option><option value="34528">Краснодон</option><option value="27500">Краснознаменск</option><option value="30977">Краснокаменск</option><option value="28223">Краснокамск</option><option value="33931">Красноперекопск</option><option value="23465">Красноселькуп</option><option value="34567">Краснослободск</option><option value="28041">Краснотурьинск</option><option value="28439">Красноуральск</option><option value="28434">Красноуфимск</option><option value="29570">Красноярск</option><option value="34273">Красный Кут</option><option value="34634">Красный Сулин</option><option value="27215">Красный Холм</option><option value="27716">Кременки</option><option value="33615">Кременчуг</option><option value="26285">Крестцы</option><option value="33791">Кривой Рог</option><option value="26060">Кронштадт</option><option value="34936">Кропоткин</option><option value="37002">Крымск</option><option value="27562">Кстово</option><option value="27501">Кубинка</option><option value="35124">Кувандык</option><option value="26392">Кувшиново</option><option value="28116">Кудымкар</option><option value="27963">Кузнецк</option><option value="29611">Куйбышев</option><option value="27644">Кулебаки</option><option value="24891">Кулу</option><option value="36024">Кулунда</option><option value="28927">Кумертау</option><option value="28326">Кунгур</option><option value="29706">Купино</option><option value="34416">Купянск</option><option value="28661">Курган</option><option value="37024">Курганинск</option><option value="32174">Курильск</option><option value="27639">Курлово</option><option value="27537">Куровское</option><option value="34009">Курск</option><option value="28659">Куртамыш</option><option value="30547">Курумкан</option><option value="34102">Курчатов</option><option value="28540">Куса</option><option value="28233">Кушва</option><option value="34737">Кущевская</option><option value="36096">Кызыл</option><option value="30806">Кырен</option><option value="28646">Кыштым</option><option value="30925">Кяхта</option><option value="37026">Лабинск</option><option value="23329">Лабытнанги</option><option value="34984">Лагань</option><option value="26704">Ладушкин</option><option value="37019">Лазаревское</option><option value="27693">Лаишево</option><option value="27544">Лакинск</option><option value="23950">Лангепас</option><option value="22706">Лахденпохья</option><option value="27824">Лебедянь</option><option value="28714">Лениногорск</option><option value="34565">Ленинск</option><option value="29744">Ленинск-Кузнецкий</option><option value="24923">Ленск</option><option value="37049">Лермонтов</option><option value="28136">Лесной</option><option value="22806">Лесогорский</option><option value="31875">Лесозаводск</option><option value="29264">Лесосибирск</option><option value="33989">Ливадия</option><option value="34013">Ливны</option><option value="27440">Ликино-Дулево</option><option value="27930">Липецк</option><option value="27813">Липки</option><option value="34527">Лисичанск</option><option value="34231">Лиски</option><option value="30813">Листвянка</option><option value="27403">Лихославль</option><option value="22913">Лодейное поле</option><option value="34409">Лозовая</option><option value="26064">Ломоносов</option><option value="27436">Лосино-Петровский</option><option value="27421">Лотошино</option><option value="26166">Луга</option><option value="34523">Луганск</option><option value="22982">Луза</option><option value="27665">Лукоянов</option><option value="27620">Луховицы</option><option value="33187">Луцк</option><option value="27563">Лысково</option><option value="28234">Лысьва</option><option value="27536">Лыткарино</option><option value="33393">Львов</option><option value="34101">Льгов</option><option value="26078">Любань</option><option value="27504">Люберцы</option><option value="27236">Любим</option><option value="26895">Людиново</option><option value="23846">Лянтор</option><option value="25913">Магадан</option><option value="37146">Магас</option><option value="28838">Магнитогорск</option><option value="37021">Майкоп</option><option value="37223">Майский</option><option value="32116">Макаров</option><option value="27259">Макарьев</option><option value="28666">Макушино</option><option value="26184">Малая Вишера</option><option value="37226">Малгобек</option><option value="28401">Малмыж</option><option value="34012">Малоархангельск</option><option value="27606">Малоярославец</option><option value="28503">Мамадыш</option><option value="26606">Мамоново</option><option value="27262">Мантурово</option><option value="29551">Мариинск</option><option value="27583">Мариинский Посад</option><option value="34712">Мариуполь</option><option value="34173">Маркс</option><option value="33988">Массандра</option><option value="37472">Махачкала</option><option value="26983">Мглин</option><option value="23949">Мегион</option><option value="22721">Медвежьегорск</option><option value="35129">Медногорск</option><option value="27714">Медынь</option><option value="28732">Межгорье</option><option value="29854">Междуреченск</option><option value="28067">Междуреченский</option><option value="22471">Мезень</option><option value="27637">Меленки</option><option value="28925">Мелеуз</option><option value="34704">Мелитополь</option><option value="28508">Менделеевск</option><option value="28517">Мензелинск</option><option value="25716">Меренга</option><option value="27705">Мещовск</option><option value="28647">Миасс</option><option value="23703">Микунь</option><option value="34438">Миллерово</option><option value="37054">Минеральные Воды</option><option value="29866">Минусинск</option><option value="28631">Миньяр</option><option value="33496">Миргород</option><option value="24726">Мирный</option><option value="27729">Михайлов</option><option value="34352">Михайловка</option><option value="34948">Михайловск</option><option value="27935">Мичуринск</option><option value="33663">Могилев-Подольский</option><option value="30673">Могоча</option><option value="27509">Можайск</option><option value="28409">Можга</option><option value="37145">Моздок</option><option value="27307">Мокшан</option><option value="22212">Мончегорск</option><option value="34545">Морозовск</option><option value="27848">Моршанск</option><option value="33397">Моршин</option><option value="27704">Мосальск</option><option value="27612">Москва</option><option value="33391">Мостиска</option><option value="37029">Мостовской</option><option value="33632">Мукачево</option><option value="23655">Муравленко</option><option value="27097">Мураши</option><option value="22113">Мурманск</option><option value="27549">Муром</option><option value="27817">Мценск</option><option value="25173">Мыс Шмидта</option><option value="29853">Мыски</option><option value="27525">Мытищи</option><option value="27220">Мышкин</option><option value="28507">Набережные Челны</option><option value="27542">Навашино</option><option value="27352">Наволоки</option><option value="23445">Надым</option><option value="29561">Назарово</option><option value="37251">Назрань</option><option value="28588">Называевск</option><option value="37212">Нальчик</option><option value="34886">Нариманов</option><option value="27611">Наро-Фоминск</option><option value="37214">Нарткала</option><option value="29127">Нарым</option><option value="23205">Нарьян-Мар</option><option value="31970">Находка</option><option value="26555">Невель</option><option value="32145">Невельск</option><option value="37036">Невинномысск</option><option value="28344">Невьянск</option><option value="26486">Нелидово</option><option value="26615">Неман</option><option value="33565">Немиров</option><option value="27350">Нерехта</option><option value="30768">Нерчинск</option><option value="30392">Нерюнгри</option><option value="26715">Нестеров</option><option value="28173">Нефедова</option><option value="28902">Нефтегорск</option><option value="28513">Нефтекамск</option><option value="37071">Нефтекумск</option><option value="23848">Нефтеюганск</option><option value="28417">Нечкино</option><option value="27260">Нея</option><option value="23471">Нижневартовск</option><option value="28899">Нижнекамск</option><option value="29698">Нижнеудинск</option><option value="28432">Нижние Серги</option><option value="27960">Нижний Ломов</option><option value="27459">Нижний Новгород</option><option value="28240">Нижний Тагил</option><option value="28243">Нижняя Салда</option><option value="28140">Нижняя Тура</option><option value="33846">Николаев</option><option value="34365">Николаевск</option><option value="31369">Николаевск-на-Амуре</option><option value="27871">Никольск</option><option value="33805">Никополь</option><option value="30218">Новая Игирма</option><option value="33869">Новая Каховка</option><option value="22917">Новая Ладога</option><option value="28045">Новая Ляля</option><option value="33056">Новгород-Северский</option><option value="34944">Новоалександровск</option><option value="29841">Новоалтайск</option><option value="34254">Новоаннинский</option><option value="34124">Нововоронеж</option><option value="33312">Новоград-Волынский</option><option value="22552">Новодвинск</option><option value="26993">Новозыбков</option><option value="34934">Новокубанск</option><option value="29846">Новокузнецк</option><option value="28904">Новокуйбышевск</option><option value="27934">Новомичуринск</option><option value="34501">Новомосковск</option><option value="34241">Новониколаевский</option><option value="37210">Новопавловск</option><option value="26360">Новоржев</option><option value="31991">Новороссийка</option><option value="37006">Новороссийск</option><option value="29634">Новосибирск</option><option value="27914">Новосиль</option><option value="26463">Новосокольники</option><option value="27873">Новоспасское</option><option value="35035">Новотроицк</option><option value="34289">Новоузенск</option><option value="33706">Новоукраинка</option><option value="27787">Новоульяновск</option><option value="28342">Новоуральск</option><option value="34140">Новохоперск</option><option value="27582">Новочебоксарск</option><option value="34732">Новочеркасск</option><option value="34633">Новошахтинск</option><option value="34213">Новый Оскол</option><option value="23358">Новый Уренгой</option><option value="27529">Ногинск</option><option value="32053">Ноглики</option><option value="27393">Нолинск</option><option value="23078">Норильск</option><option value="23356">Ноябрьск</option><option value="28706">Нурлат</option><option value="28219">Нытва</option><option value="24639">Нюрба</option><option value="23733">Нягань</option><option value="28533">Нязепетровск</option><option value="22854">Няндома</option><option value="31702">Облучье</option><option value="27002">Обнинск</option><option value="34109">Обоянь</option><option value="33346">Обухов</option><option value="23906">Объячево</option><option value="29630">Обь</option><option value="33831">Овидиополь</option><option value="33213">Овруч</option><option value="33837">Одесса</option><option value="27517">Одинцово</option><option value="22897">Озерки</option><option value="28545">Озерск</option><option value="27621">Озеры</option><option value="24688">Оймякон</option><option value="27893">Октябрьск</option><option value="34656">Октябрьский</option><option value="28754">Октябрьское</option><option value="26283">Окуловка</option><option value="24944">Олекминск</option><option value="21945">Оленегорск</option><option value="24125">Оленек</option><option value="22912">Олонец</option><option value="28698">Омск</option><option value="28109">Омутнинск</option><option value="22641">Онега</option><option value="26456">Опочка</option><option value="33804">Орджоникидзе</option><option value="27906">Орел</option><option value="35121">Оренбург</option><option value="27522">Орехово-Зуево</option><option value="27187">Орлов</option><option value="35138">Орск</option><option value="28324">Оса</option><option value="29851">Осинники</option><option value="26389">Осташков</option><option value="26358">Остров</option><option value="22049">Островной</option><option value="34230">Острогожск</option><option value="26082">Отрадное</option><option value="28808">Отрадный</option><option value="32060">Оха</option><option value="28321">Оханск</option><option value="31088">Охотск</option><option value="33848">Очаков</option><option value="28217">Очер</option><option value="27555">Павлово</option><option value="34237">Павловск</option><option value="34834">Павловская</option><option value="27523">Павловский Посад</option><option value="34502">Павлоград</option><option value="32227">Палана</option><option value="34373">Палласовка</option><option value="31987">Партизанск</option><option value="25051">Певек</option><option value="27962">Пенза</option><option value="34517">Первомайск</option><option value="33932">Первомайское</option><option value="28437">Первоуральск</option><option value="27664">Перевоз</option><option value="27425">Переславль-Залесский</option><option value="33355">Переяслав-Хмельницкий</option><option value="28224">Пермь</option><option value="27109">Пестово</option><option value="26074">Петергоф</option><option value="34269">Петров Вал</option><option value="34063">Петровск</option><option value="30834">Петровск-Забайкальский</option><option value="22820">Петрозаводск</option><option value="32583">Петропавловск-Камчатский</option><option value="28674">Петухово</option><option value="27526">Петушки</option><option value="22005">Печенга</option><option value="23418">Печора</option><option value="26351">Печоры</option><option value="26097">Пикалево</option><option value="22563">Пинега</option><option value="26607">Пионерский</option><option value="33361">Пирятин</option><option value="22709">Питкяранта</option><option value="27814">Плавск</option><option value="28744">Пласт</option><option value="27345">Плёс</option><option value="22672">Плесецк</option><option value="34147">Поворино</option><option value="33416">Подволочиск</option><option value="27630">Подольск</option><option value="22921">Подпорожье</option><option value="23951">Покачи</option><option value="27535">Покров</option><option value="24856">Покровск</option><option value="28436">Полевской</option><option value="26709">Полесск</option><option value="34608">Пологи</option><option value="33506">Полтава</option><option value="29746">Полысаево</option><option value="22215">Полярные Зори</option><option value="22019">Полярный</option><option value="33705">Помошная</option><option value="34529">Попасная</option><option value="32098">Поронайск</option><option value="26362">Порхов</option><option value="28809">Похвистнево</option><option value="33414">Почаев</option><option value="26986">Почеп</option><option value="26784">Починок</option><option value="27223">Пошехонье</option><option value="31587">Поярково</option><option value="26707">Правдинск</option><option value="27344">Приволжск</option><option value="33362">Прилуки</option><option value="22893">Приморск</option><option value="34824">Приморско-Ахтарск</option><option value="26158">Приозерск</option><option value="29845">Прокопьевск</option><option value="34748">Пролетарск</option><option value="27724">Протвино</option><option value="37144">Прохладный</option><option value="37028">Псебай</option><option value="26258">Псков</option><option value="34098">Пугачев</option><option value="22831">Пудож</option><option value="26457">Пустошка</option><option value="27448">Пучеж</option><option value="26073">Пушкин</option><option value="27608">Пушкино</option><option value="26359">Пушкинские Горы</option><option value="27725">Пущино</option><option value="26361">Пыталово</option><option value="23944">Пыть-Ях</option><option value="28452">Пышма</option><option value="37050">Пятигорск</option><option value="33338">Радомышль</option><option value="27545">Радужный</option><option value="33834">Раздельная</option><option value="31592">Райчихинск</option><option value="27505">Раменское</option><option value="27948">Рассказово</option><option value="29923">Ребриха</option><option value="28430">Ревда</option><option value="28347">Реж</option><option value="33888">Рени</option><option value="26498">Ржев</option><option value="33301">Ровно</option><option value="27351">Родники</option><option value="26882">Рославль</option><option value="34236">Россошь</option><option value="27329">Ростов</option><option value="34730">Ростов-на-Дону</option><option value="27540">Рошаль</option><option value="34056">Ртищево</option><option value="36034">Рубцовск</option><option value="34262">Рудня</option><option value="27520">Руза</option><option value="27761">Рузаевка</option><option value="27225">Рыбинск</option><option value="27728">Рыбное</option><option value="33166">Рыльск</option><option value="27835">Ряжск</option><option value="27730">Рязань</option><option value="33930">Саки</option><option value="28824">Салават</option><option value="29742">Салаир</option><option value="23330">Салехард</option><option value="34842">Сальск</option><option value="28807">Самара</option><option value="26063">Санкт-Петербург</option><option value="27760">Саранск</option><option value="28418">Сарапул</option><option value="34172">Саратов</option><option value="33088">Сарны</option><option value="27552">Саров</option><option value="27745">Сасово</option><option value="28635">Сатка</option><option value="26686">Сафоново</option><option value="29861">Саяногорск</option><option value="30509">Саянск</option><option value="33635">Свалява</option><option value="26700">Светлогорск</option><option value="34954">Светлоград</option><option value="34563">Светлый Яр</option><option value="26703">Светлый</option><option value="22807">Светогорск</option><option value="30614">Свирск</option><option value="31445">Свободный</option><option value="26455">Себеж</option><option value="33991">Севастополь</option><option value="30435">Северобайкальск</option><option value="22546">Северодвинск</option><option value="34422">Северодонецк</option><option value="32215">Северо-Курильск</option><option value="22111">Североморск</option><option value="23919">Североуральск</option><option value="29440">Северск</option><option value="26995">Севск</option><option value="22621">Сегежа</option><option value="25703">Сеймчан</option><option value="26897">Сельцо</option><option value="27462">Семенов</option><option value="34636">Семикаракорск</option><option value="34119">Семилуки</option><option value="32509">Семячики</option><option value="27891">Сенгилей</option><option value="34357">Серафимович</option><option value="27577">Сергач</option><option value="27616">Сергиев Посад</option><option value="34062">Сердобск</option><option value="27622">Серебряные Пруды</option><option value="27506">Середниково</option><option value="28044">Серов</option><option value="27618">Серпухов</option><option value="22910">Сертолово</option><option value="28935">Сибай</option><option value="28632">Сим</option><option value="33987">Симеиз</option><option value="33946">Симферополь</option><option value="33903">Скадовск</option><option value="30692">Сковородино</option><option value="27825">Скопин</option><option value="29915">Славгород</option><option value="26613">Славск</option><option value="33516">Славское</option><option value="33133">Славутич</option><option value="34924">Славянск-на-Кубани</option><option value="28587">Сладково</option><option value="26055">Сланцы</option><option value="28104">Слободской</option><option value="30810">Слюдянка</option><option value="33476">Смела</option><option value="32090">Смирных</option><option value="26781">Смоленск</option><option value="28547">Снежинск</option><option value="22110">Снежногорск</option><option value="32477">Соболево</option><option value="27815">Советск</option><option value="31770">Советская Гавань</option><option value="33967">Советский</option><option value="27038">Сокол</option><option value="27720">Сокольники</option><option value="27049">Солигалич</option><option value="28027">Соликамск</option><option value="27603">Солнечногорск</option><option value="22429">Соловки</option><option value="22884">Сольвычегодск</option><option value="35120">Соль-Илецк</option><option value="26263">Сольцы</option><option value="35011">Сорочинск</option><option value="29760">Сорск</option><option value="22802">Сортавала</option><option value="27715">Сосенский</option><option value="28504">Сосновка</option><option value="22891">Сосново</option><option value="29479">Сосновоборск</option><option value="26056">Сосновый Бор</option><option value="23607">Сосногорск</option><option value="23625">Сосьва</option><option value="37099">Сочи</option><option value="26795">Спас-Деменск</option><option value="27636">Спас-Клепики</option><option value="27860">Спасск</option><option value="31922">Спасск-Дальний</option><option value="27735">Спасск-Рязанский</option><option value="25206">Среднеколымск</option><option value="28444">Среднеуральск</option><option value="34564">Средняя Ахтуба</option><option value="30777">Сретенск</option><option value="34949">Ставрополь</option><option value="34825">Станица Каневская</option><option value="26275">Старая Русса</option><option value="26499">Старица</option><option value="26994">Стародуб</option><option value="33971">Старый Крым</option><option value="34116">Старый Оскол</option><option value="28825">Стерлитамак</option><option value="23952">Стрежевой</option><option value="34211">Строитель</option><option value="33513">Стрый</option><option value="27624">Ступино</option><option value="27717">Суворов</option><option value="33975">Судак</option><option value="34100">Суджа</option><option value="27541">Судогда</option><option value="27533">Суздаль</option><option value="29823">Сузун</option><option value="33275">Сумы</option><option value="24738">Сунтар</option><option value="22717">Суоярви</option><option value="26982">Сураж</option><option value="23849">Сургут</option><option value="34551">Суровикино</option><option value="27971">Сурск</option><option value="24790">Сусуман</option><option value="27707">Сухиничи</option><option value="28450">Сухой Лог</option><option value="27983">Сызрань</option><option value="23804">Сыктывкар</option><option value="28648">Сыростан</option><option value="28448">Сысерть</option><option value="26595">Сычевка</option><option value="22914">Сясьстрой</option><option value="28264">Тавда</option><option value="34720">Таганрог</option><option value="29521">Тайга</option><option value="29594">Тайшет</option><option value="27420">Талдом</option><option value="28352">Талица</option><option value="20864">Тамбей</option><option value="27947">Тамбов</option><option value="28493">Тара</option><option value="23552">Тарко Сале</option><option value="27723">Таруса</option><option value="29605">Татарск</option><option value="29954">Таштагол</option><option value="27402">Тверь</option><option value="37193">Теберда</option><option value="27444">Тейково</option><option value="27752">Темников</option><option value="34914">Темрюк</option><option value="37224">Терек</option><option value="22028">Териберка</option><option value="31909">Терней</option><option value="33415">Тернополь</option><option value="37204">Терскол</option><option value="27697">Тетюши</option><option value="21824">Тикси</option><option value="34922">Тимашевск</option><option value="26094">Тихвин</option><option value="34838">Тихорецк</option><option value="28275">Тобольск</option><option value="29636">Тогучин</option><option value="30127">Токма</option><option value="22900">Токсово</option><option value="27890">Тольятти</option><option value="32122">Томари</option><option value="31005">Томмот</option><option value="30439">Томпа</option><option value="29430">Томск</option><option value="29641">Топки</option><option value="27401">Торжок</option><option value="26479">Торопец</option><option value="26077">Тосно</option><option value="27051">Тотьма</option><option value="28733">Трехгорный</option><option value="28748">Троицк</option><option value="23711">Троицко-Печорск</option><option value="26997">Трубчевск</option><option value="33399">Трускавец</option><option value="37018">Туапсе</option><option value="28712">Туймазы</option><option value="27719">Тула</option><option value="23815">Тулпан</option><option value="30504">Тулун</option><option value="33566">Тульчин</option><option value="24507">Тура</option><option value="36093">Туран</option><option value="28255">Туринск</option><option value="23472">Туруханск</option><option value="27229">Тутаев</option><option value="23589">Тутончаны</option><option value="32071">Тымовское</option><option value="30499">Тында</option><option value="37205">Тырныауз</option><option value="28586">Тюкалинск</option><option value="28367">Тюмень</option><option value="34048">Уварово</option><option value="32088">Углегорск</option><option value="27321">Углич</option><option value="24321">Удачный</option><option value="27206">Удомля</option><option value="33631">Ужгород</option><option value="29653">Ужур</option><option value="27821">Узловая</option><option value="30823">Улан-Удэ</option><option value="33698">Ульяновка</option><option value="27786">Ульяновск</option><option value="33587">Умань</option><option value="26985">Унеча</option><option value="23928">Урай</option><option value="23453">Уренгой</option><option value="27370">Урень</option><option value="28307">Уржум</option><option value="37237">Урус-Мартан</option><option value="34240">Урюпинск</option><option value="23410">Усинск</option><option value="27931">Усмань</option><option value="28026">Усолье</option><option value="30712">Усолье-Сибирское</option><option value="31847">Уссурийск</option><option value="36044">Усть-Калманка</option><option value="30635">Усть-Баргузин</option><option value="37046">Усть-Джегута</option><option value="30117">Усть-Илимск</option><option value="28382">Усть-Ишим</option><option value="32408">Усть-Камчатск</option><option value="28638">Усть-Катав</option><option value="23803">Усть-Кулом</option><option value="30320">Усть-Кут</option><option value="34937">Усть-Лабинск</option><option value="30713">Усть-Ордынский</option><option value="27106">Устюжна</option><option value="28722">Уфа</option><option value="23606">Ухта</option><option value="28736">Учалы</option><option value="25399">Уэлен</option><option value="29576">Уяр</option><option value="33339">Фастов</option><option value="34005">Фатеж</option><option value="33976">Феодосия</option><option value="31976">Фокино</option><option value="34356">Фролово</option><option value="27353">Фурманов</option><option value="31735">Хабаровск</option><option value="37016">Хадыженск</option><option value="23933">Ханты-Мансийск</option><option value="34687">Харабали</option><option value="27040">Харовск</option><option value="34526">Харцызск</option><option value="34300">Харьков</option><option value="37248">Хасавюрт</option><option value="31968">Хасан</option><option value="20891">Хатанга</option><option value="34083">Хвалынск</option><option value="33902">Херсон</option><option value="30844">Хилок</option><option value="27512">Химки</option><option value="33423">Хмельницкий</option><option value="26378">Холм</option><option value="22559">Холмогоры</option><option value="32128">Холмск</option><option value="37020">Хоста</option><option value="33547">Хотин</option><option value="30629">Хужир</option><option value="33638">Хуст</option><option value="27588">Цивильск</option><option value="34646">Цимлянск</option><option value="33904">Цюрупинск</option><option value="28413">Чайковский</option><option value="28903">Чапаевск</option><option value="27932">Чаплыгин</option><option value="28742">Чебаркуль</option><option value="27581">Чебоксары</option><option value="37211">Чегем</option><option value="27712">Чекалин</option><option value="20292">Челюскин</option><option value="28642">Челябинск</option><option value="23914">Чердынь</option><option value="30617">Черемхово</option><option value="29731">Черепаново</option><option value="27113">Череповец</option><option value="33487">Черкассы</option><option value="37047">Черкесск</option><option value="28128">Чермоз</option><option value="33135">Чернигов</option><option value="33231">Чернобыль</option><option value="33658">Черновцы</option><option value="27434">Черноголовка</option><option value="29860">Черногорск</option><option value="33924">Черноморское</option><option value="28428">Чернушка</option><option value="34550">Чернышковский</option><option value="26711">Черняховск</option><option value="25123">Черский</option><option value="27538">Черусти</option><option value="27531">Чехов</option><option value="33605">Чигирин</option><option value="37218">Чикола</option><option value="28601">Чистополь</option><option value="30758">Чита</option><option value="27451">Чкаловск</option><option value="21946">Чокурдах</option><option value="33630">Чоп</option><option value="34410">Чугуев</option><option value="26079">Чудово</option><option value="29625">Чулым</option><option value="28133">Чусовой</option><option value="27157">Чухлома</option><option value="28552">Шадринск</option><option value="37238">Шали</option><option value="28334">Шамары</option><option value="29558">Шарыпово</option><option value="27271">Шарья</option><option value="27654">Шатки</option><option value="37351">Шатой</option><option value="27615">Шатура</option><option value="27422">Шаховская</option><option value="32087">Шахтерск</option><option value="34635">Шахты</option><option value="27373">Шахунья</option><option value="27744">Шацк</option><option value="34316">Шебекино</option><option value="24329">Шелагонцы</option><option value="30711">Шелехов</option><option value="22768">Шенкурск</option><option value="33317">Шепетовка</option><option value="29955">Шерегеш</option><option value="27514">Шереметьево</option><option value="30862">Шилка</option><option value="31442">Шимановск</option><option value="34087">Шиханы</option><option value="26072">Шлиссельбург</option><option value="33155">Шостка</option><option value="33592">Шпола</option><option value="27580">Шумерля</option><option value="28655">Шумиха</option><option value="27441">Шуя</option><option value="27819">Щекино</option><option value="33981">Щелкино</option><option value="27528">Щелково</option><option value="23406">Щельяюр</option><option value="34010">Щигры</option><option value="28650">Щучье</option><option value="27435">Электрогорск</option><option value="27726">Электросталь</option><option value="27439">Электроугли</option><option value="34861">Элиста</option><option value="37203">Эльбрус</option><option value="34476">Эльтон</option><option value="34778">Энгельс</option><option value="33806">Энергодар</option><option value="34141">Эртиль</option><option value="23922">Югорск</option><option value="27449">Южа</option><option value="32165">Южно-Курильск</option><option value="32150">Южно-Сахалинск</option><option value="33776">Южноукраинск</option><option value="28745">Южноуральск</option><option value="29536">Юрга</option><option value="28075">Юровск</option><option value="27355">Юрьевец</option><option value="27437">Юрьев-Польский</option><option value="28640">Юрюзань</option><option value="27706">Юхнов</option><option value="27579">Ядрин</option><option value="24959">Якутск</option><option value="23812">Якша </option><option value="33990">Ялта</option><option value="28465">Ялуторовск</option><option value="23147">Ямбург </option><option value="28419">Янаул</option><option value="27385">Яранск</option><option value="33645">Яремча</option><option value="29914">Яровое</option><option value="27331">Ярославль</option><option value="23341">Яр-Сале</option><option value="26580">Ярцево</option><option value="27722">Ясногорск</option><option value="35147">Ясный</option><option value="27418">Яхрома</option><option value="34846">Яшалта</option><option value="34866">Яшкуль</option>
+					</select><br>
+					<label>Введите полный URL фоновой картинки:</label>
+					<input id="input_background" type="text" name="color_background" value="http://pcwallart.com/images/blue-color-gradient-wallpaper-2.jpg">
+					<label>Выберете цвет текста и иконок:</label>
+					<input id="input_color" type="color" name="color_text" value="#ffffff">
+					<input id="form_submit" type="submit" value="Сохранить настройки">
+				</form>
+			</div>
+			<span onclick="javascript:spoiler('modal_city')" id="modal_close">x</span>
+		</div>
+		<!-- /Модальное окно -->
+
+		<script type="text/javascript">
+			function spoiler(id) {
+				if(document.getElementById(id).style.display == "none"){
+					document.getElementById(id).style.display = "";
+					//document.getElementById('body').style.overflow = "hidden";
+
+				} else {
+					document.getElementById(id).style.display = "none";
+					//document.getElementById('body').style.overflow = "visible";
+				}
+			}
+			function modals(id) {
+				var div = document.getElementsByClassName('details_all');
+				for(i=0; i < div.length; i++) {
+					div[i].style.display='none';
+				}
+				var dayactive = document.getElementsByClassName('day active');
+				for(i=0; i < dayactive.length; i++) {
+					dayactive[i].className='day no_active';
+				}
+
+				if(document.getElementById(id).style.display == "none"){
+					document.getElementById(id).style.display = "";
+
+				} else {
+					document.getElementById(id).style.display = "none";
+				}
+			}
+		</script>
+		<script>
+		$('#slider').sliderRM({
+			bar: false,
+			nav: false,
+			responsive:{
+				300:{
+					items: 2,
+					nav: true,
+				},
+				550:{
+					items: 3,
+					nav: true,
+				},
+				660:{
+					items: 4,
+					nav: true,
+				},
+				770:{
+					items: 5,
+					nav: true,
+				},
+				880:{
+					items: 6,
+					nav: true,
+				},
+				990:{
+					items: 7,
+					nav: true,
+				},
+				1100:{
+					items: 8,
+					nav: true,
+				},
+				1210:{
+					items: 9,
+					nav: true,
+				},
+				1320:{
+					items: 10,
+					nav: true,
+				},
+			}
+		});
+		</script>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter34566920 = new Ya.Metrika({id:34566920,
+                            webvisor:true,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true});
+                } catch(e) { }
+            });
+        
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+        
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/34566920" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+	</body>
+</html>

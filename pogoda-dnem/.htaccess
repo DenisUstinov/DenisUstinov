@@ -1,0 +1,10 @@
+addDefaultCharset utf-8
+
+php_value error_log /home/d/denisul4/pogodadnem.ru/public_html/log/php_errors.log
+
+RewriteEngine on
+RewriteRule ^robots.txt$ /robots.txt.php
+RewriteCond %{HTTP_HOST} ^([^\.]+)\.xn--80afdbf6bfdbh\.xn--p1ai$ [NC]
+RewriteCond %{HTTP_HOST} !^www\.xn--80afdbf6bfdbh\.xn--p1ai$ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule . - [L,QSA,E=SITY_NAME:%1]
