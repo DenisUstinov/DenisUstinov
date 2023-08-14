@@ -65,7 +65,6 @@ git, php, python, html, css, asyncio, docker, fastapi, mysql, postgresql, Linux,
 ### Проект: Каталог продукции, 2015 год
 
 Проект не поддерживается. Некоторые функции, в целях безопасности, отключены.
-
 * Ссылка на сайт: [product-catalog](https://product-catalog.denisustinov.name)
 * Ссылка на код проект: [GitHub](https://github.com/DenisUstinov/DenisUstinov/tree/main/product-catalog)
 
@@ -89,10 +88,9 @@ git, php, python, html, css, asyncio, docker, fastapi, mysql, postgresql, Linux,
 
 ### Проект: Сайт о погоде, 2016 год
 
-Проект не поддерживается. Некоторые функции, в целях безопасности, отключены.
-
 Создание интересных и функциональных веб-приложений стало для меня главной мотивацией после завершения первого проекта. После успешного окончания второго курса по PHP, я решил взяться за новое интересное направление - разработку сайта о погоде. Этот проект стал для меня возможностью применить свои навыки в программировании к созданию полезного и удобного онлайн-ресурса.
 
+Проект не поддерживается.
 * Ссылка на сайт (К сожалению восстановить работоспособность сайта не удалось)
 * Ссылка на код проекта:  [GitHub](https://github.com/DenisUstinov/DenisUstinov/tree/main/pogodadnem)
 
@@ -116,7 +114,8 @@ git, php, python, html, css, asyncio, docker, fastapi, mysql, postgresql, Linux,
 
 В поисках новых вызовов и расширения своих навыков веб-разработки, я решился на создание своего собственного фреймворка на языке PHP. Основная цель состояла в создании информационного сайта с использованием паттерна MVC, чтобы погрузиться в разработку более сложных веб-приложений.
 
-* Ссылка на сайт (ДЕМО в разработке): [tvoya-semya](https://tvoya-semya.denisustinov.name)
+Проект не поддерживается. Некоторые функции, в целях безопасности, отключены.
+* Ссылка на сайт (ДЕМО в разработке): [tvoya-semya](https://prosemyu.ru)
 * Ссылка на код проект: [GitHub](https://github.com/DenisUstinov/DenisUstinov/tree/main/tvoya-semya)
 
 ![Project interface](https://github.com/DenisUstinov/DenisUstinov/blob/main/tvoya-semya/project_interface.png)
