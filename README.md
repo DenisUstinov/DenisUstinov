@@ -119,6 +119,8 @@ git, php, python, html, css, asyncio, docker, fastapi, mysql, postgresql, Linux,
 * Ссылка на сайт (ДЕМО в разработке): [tvoya-semya](https://tvoya-semya.denisustinov.name)
 * Ссылка на код проект: [GitHub](https://github.com/DenisUstinov/DenisUstinov/tree/main/tvoya-semya)
 
+![Project interface](https://github.com/DenisUstinov/DenisUstinov/blob/main/tvoya-semya/project_interface.png)
+
 Основные модули проекта:
 
 * Модуль создания списка заголовков статьи: Для динамического отображения заголовков статей был разработан модуль, который извлекал и отображал список заголовков из базы данных.
