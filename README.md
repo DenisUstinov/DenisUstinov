@@ -199,7 +199,7 @@ git, php, python, html, css, asyncio, docker, fastapi, mysql, postgresql, Linux,
 
 ![Project interface](https://github.com/DenisUstinov/DenisUstinov/blob/main/kino-poisk/project_interface.png)
 
-### Далее партфолио в разработке...
+### Все еще впереди...
 
 ## Что дальше?
 
