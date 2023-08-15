@@ -1,0 +1,36 @@
+
+					<div itemscope itemtype="http://schema.org/VideoObject">
+						<link itemprop="url" href="{$URL}">
+						<meta itemprop="name" content="{$title}">
+						<meta itemprop="description" content="Смотрите или скачивайте видео {$title}, от пользователя {$channelTitle}">
+						<meta itemprop="duration" content="{$duration}">
+						<span itemprop="author" itemscope itemtype="{$HOST}/channel/{$channelId}"></span>
+						<meta itemprop="genre" content="{$genre}">
+						<meta itemprop="content_id" content="{$channelId}{$videoId}">
+						<meta itemprop="isFamilyFriendly" content="true">
+						<meta itemprop="license" content="СС">
+						<link itemprop="image" href="{$HOST}/imagefile/{$videoId}.jpg">
+						<meta itemprop="productionCompany" content="{$channelTitle}">
+						<meta itemprop="status" content="published">
+
+						<meta itemprop="uploadDate" content="{$publishedAt}">
+						<meta itemprop="dateCreated" content="{$publishedAt}">
+						<meta itemprop="dateModified" content="{$publishedAt}">
+						<meta itemprop="datePublished" content="{$publishedAt}">
+
+						<span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+							<link itemprop="contentUrl" href="{$HOST}/imagefile/{$videoId}.jpg">
+							<meta itemprop="width" content="320">
+							<meta itemprop="height" content="180">
+						</span>
+						{$playerSchema}
+						<meta itemprop="interactionCount" content="UserLikes:{$likeCount}"/>
+						<meta itemprop="interactionCount" content="UserDislikes:{$dislikeCount}"/>
+						<meta itemprop="interactionCount" content="UserViews:{$viewCount}"/>
+						<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+							<meta itemprop="worstRating" content="1">
+							<meta itemprop="bestRating" content="5">
+							<meta itemprop="ratingValue" content="{$ratingValue}">
+							<meta itemprop="ratingCount" content="{$ratingCount}">
+						</div>
+					</div>

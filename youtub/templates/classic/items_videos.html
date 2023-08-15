@@ -1,0 +1,16 @@
+
+			<div class="item">
+				<a href="{$HOST}/watch/{$videoId}/{$translit}" title="{$title}">
+					<div class="item-img">
+						<img src="{$thumbnails}" alt="{$title}">
+						<img class="play" src="{$HOST}/templates/{$templates}/images/play.png" alt="Воспроизведение видео">
+					</div>
+					<div class="item-header">{$title_small}</div>
+				</a>
+				<div class="item-channel">
+					<a href="{$HOST}/channel/{$channelId}" title="{$channelTitle}">{$channelTitle}</a><span class="item-date"> • {$publishedAt}</span>
+				</div>
+				<div class="item-description">
+					{$description}
+				</div>
+			</div>

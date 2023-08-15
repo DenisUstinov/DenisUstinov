@@ -1,0 +1,90 @@
+/* Portrait tablets and medium desktops */
+@media (max-width: 1199px) {
+	.main, .header, .footer {
+		width: 956px;
+	}
+	.search {
+		width: 645px;
+	}
+	.searchInput {
+		width: 546px;
+	}
+	.item {
+		width: 295px;
+	}
+	.video {
+		width: 531px;
+	}
+	.footer-body {
+		width: 777px;
+	}
+	.video-count, .video-data {
+		width: 96%;
+		margin: 2%;
+	}
+	.video-channel, .video-date, .video-share, .video-view, .video-url span {
+		text-align: center;
+	}
+}
+
+/* Portrait tablets and small desktops */
+@media (max-width: 992px) {
+	.main, .header, .footer {
+		width: 728px;
+	}
+	.search {
+		width: 417px;
+	}
+	.searchInput {
+		width: 350px;
+	}
+	.item, .itemr-img {
+		width: 341px;
+	}
+	.itemr-data {
+		width: 337px;
+	}
+	.video, .watch-related {
+		width: 96%;
+		margin: 2%;
+	}
+	.footer-body {
+		width: 553px;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 768px) {
+	.main, .header, .footer {
+		width: calc(100% - 20px);
+		margin: 0;
+	}
+	.item, .add-baner, .video, .watch-related, .footer-body, .video-actions a, .video-count, .video-data, .button-download, .itemr-img, .itemr-data, .page, .itemk-img, .itemk-description{
+		width: 100%;
+		margin: 2% auto;
+	}
+	.search {
+		width: 59%;
+	}
+	.searchInput {
+		width: 201px;
+	}
+	.main-header, .footer-copy, .footer-nav, .video-actions a, .video-channel, .video-date, .video-share, .video-view, .video-url span, .button-download {
+		text-align: center;
+	}
+	.video-actions a, .footer-nav a , .button-download{
+		display: block;
+		padding: 10px 0;
+	}
+}
+@media (max-width: 480px) {
+	.logo {
+		display: none;
+	}
+	.search {
+		width: 85%;
+	}
+	.searchInput {
+		width: 170px;
+	}
+}
