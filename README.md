@@ -15,7 +15,7 @@
 
 ## Цель поиска работы
 
-Junior Python Developer, с желанием развиваться в веб-разработке.
+Junior Python Developer, Junior PHP Developer, с желанием развиваться в веб-разработке.
 
 ## Специализации
 
