@@ -214,3 +214,4 @@ git, php, python, html, css, asyncio, docker, fastapi, mysql, postgresql, Linux,
 ## Работа
 
 Я работаю в ООО Хайт-Медиа Python разработчиком. В мои обязанности входит поддержание кода, рефакторинг, отчасти переписывание кода с PHP на Python. Проект подходит к концу и я в поиске новой работы.
+![Project interface](https://github.com/DenisUstinov/DenisUstinov/blob/main/mail.jpeg)
