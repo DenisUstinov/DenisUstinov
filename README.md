@@ -47,9 +47,9 @@
   **Период обучения:** 2023 — настоящее время  
   **Специализация:** Программирование  
 
-## Общий технологический стек
+## Текущий технологический стек
 
-Golang, Python, PHP, Kafka, Kubernetes, gRPC, Docker, PostgreSQL, MySQL, Redis, Jira, CI/CD
+Golang, Kafka, Kubernetes, gRPC, Docker, PostgreSQL, Redis, Jira, CI/CD
 
 ## О себе
 
