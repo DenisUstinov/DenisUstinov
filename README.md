@@ -49,7 +49,7 @@
 
 ## Общий технологический стек
 
-Golang, Python, PHP, Kafka, Kubernetes, gRPC, Docker, PostgreSQL, Redis, Jira, CI/CD
+Golang, Python, PHP, Kafka, Kubernetes, gRPC, Docker, PostgreSQL, MySQL, Redis, Jira, CI/CD
 
 ## О себе
 
