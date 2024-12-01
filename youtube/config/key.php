@@ -1,1 +1,0 @@
-<?php return 'AIzaSyA3Bm96O0cu3qtzvynFW22MDirvXkhQPEQ1';
