@@ -47,9 +47,9 @@
   **Период обучения:** 2022 — настоящее время  
   **Специализация:** Программирование  
 
-## Навыки
+## Общий технологический стек
 
-- **Общий технологический стек:** Go (Golang), Kafka, Kubernetes (k8s), микросервисная архитектура, gRPC, Docker, PostgreSQL, Redis, Jira, CI/CD, Python, php  
+Golang, Python, PHP, Kafka, Kubernetes, gRPC, Docker, PostgreSQL, Redis, Jira, CI/CD
 
 ## О себе
 
