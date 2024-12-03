@@ -20,6 +20,3 @@
 
 ## Мое резюме
 - [Открыт к предложениям по работе]([https://github.com/username/project1](https://github.com/DenisUstinov/DenisUstinov/blob/main/CV.md))
-## Контакты
-- [LinkedIn](https://www.linkedin.com/in/username)
-- [Email](mailto:your_email@example.com)
