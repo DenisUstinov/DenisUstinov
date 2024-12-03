@@ -19,4 +19,4 @@
 - Архитектура микросервисов
 
 ## Мое резюме
-- [Открыт к предложениям по работе]([[https://github.com/username/project1](https://github.com/DenisUstinov/DenisUstinov/blob/main/CV.md)])
+- [Открыт к предложениям по работе](https://github.com/DenisUstinov/DenisUstinov/blob/main/CV.md)
