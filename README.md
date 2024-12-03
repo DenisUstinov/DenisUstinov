@@ -19,9 +19,7 @@
 - Архитектура микросервисов
 
 ## Мое резюме
-- [Проект 1](https://github.com/username/project1): API-сервис для управления задачами.
-- [Проект 2](https://github.com/username/project2): Микросервис для обработки данных.
-
+- [Открыт к предложениям по работе]([https://github.com/username/project1](https://github.com/DenisUstinov/DenisUstinov/blob/main/CV.md))
 ## Контакты
 - [LinkedIn](https://www.linkedin.com/in/username)
 - [Email](mailto:your_email@example.com)
