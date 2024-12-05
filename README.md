@@ -7,4 +7,4 @@
 Golang, Kafka, Kubernetes, gRPC, Docker, PostgreSQL, Redis, CI/CD, Python, PHP, HTML, CSS, MySQL
 
 ## Мое резюме
-[Открыт к предложениям по работе](https://github.com/DenisUstinov/DenisUstinov/blob/main/CV.md)
+[Открыт к предложениям по сотруднечеству](https://github.com/DenisUstinov/DenisUstinov/blob/main/CV.md)
