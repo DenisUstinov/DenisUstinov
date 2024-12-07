@@ -35,7 +35,7 @@ Golang разработчик
  - Специализация: Автоматизация технологических процессов и робототехника  
 
 ## Текущий технологический стек  
-Golang, Kafka, Kubernetes, gRPC, Docker, PostgreSQL, Redis, CI/CD  
+Golang, PostgreSQL, Docker, Git, Apache Kafka, gRPC, Redis
 
 ## О себе  
 Привет! Ищу работу на позицию Golang разработчика. В работе ценю хороший код, коллег и отлаженные процессы.  
