@@ -4,7 +4,7 @@
 Сейчас активно изучаю язык Go и современные подходы к разработке распределённых систем.
 
 ## Навыки
-Golang, Python, PHP, Kafka, Kubernetes, gRPC, Docker, PostgreSQL, MySQL, Redis, CI/CD, HTML, CSS
+Golang, Python, PHP, Kafka, gRPC, Docker, PostgreSQL, MySQL, Redis, HTML, CSS
 
 ## Мое резюме
 [Открыт к предложениям по сотруднечеству](https://github.com/DenisUstinov/DenisUstinov/blob/main/CV.md)
