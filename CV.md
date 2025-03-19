@@ -1,7 +1,6 @@
 # Устинов Денис Николаевич
 
 ## Контакты  
-- Телефон: [+7-929-325-66-04](tel:+79293256604)  
 - Telegram: [@denis_white](https://t.me/denis_white)  
 - Email: [denisU1980@icloud.com](mailto:denisU1980@icloud.com)  
 
