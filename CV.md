@@ -1,8 +1,7 @@
 # Устинов Денис Николаевич
 
 ## Контакты  
-- Telegram: [@denis_white](https://t.me/denis_white)  
-- Email: [denisU1980@icloud.com](mailto:denisU1980@icloud.com)  
+- Email: [83418606+DenisUstinov@users.noreply.github.com ](mailto:83418606+DenisUstinov@users.noreply.github.com )  
 
 ## Желаемая должность  
 Python разработчик. Интересуют проекты, связанные с разработкой высоконагруженных систем и микросервисов.
